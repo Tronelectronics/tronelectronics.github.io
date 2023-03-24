@@ -9,12 +9,12 @@ $(document).ready(function () {
 
     var points = [
         {
-            x: 'Satya Nadella',
+            x: 'anonymous',
             id: 'president',
             attributes: {
-                role: 'Chairman and Chief Executive Officer',
+                role: 'Overall Project Manager',
                 photo: getImgText(
-                    'https://news.microsoft.com/wp-content/uploads/prod/2017/09/satya-bio.png'
+                    'https://avatars.services.sap.com/'
                 )
             }
         },
