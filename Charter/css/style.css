@@ -1,0 +1,12 @@
+.divEmployeeName {
+    width: 100px;
+    background-color: gray;
+    border-radius: 25px;
+    color: white;
+    float: left;
+    margin: 1px 1px;
+    padding: 4px 10px;
+    text-align: center;
+    -moz-border-radius: 25px;
+    /* 老的 Firefox */
+}
