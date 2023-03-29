@@ -1,0 +1,23 @@
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#amberlight {
+    background: orange;
+    height: 15px;
+    position: relative;
+    width: 15px;
+}
+
+#greenlight {
+    background: green;
+    height: 15px;
+    width: 15px;
+}
+
+#redlight {
+    background: red;
+    height: 15px;
+    width: 15px;
+}

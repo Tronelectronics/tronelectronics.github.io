@@ -1,13 +1,13 @@
 .av6-pipS {
-    flex: 1 0 243px;
-    max-width: 243px;
+    flex: 1 0 303px;
+    max-width: 303px;
 }
 
 .container-1 {
     box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
     border-radius: 6px;
     border: 1px solid rgb(234, 234, 234);
-    width: 243px;
+    width: 303px;
 }
 
 .container-2 {
@@ -53,8 +53,8 @@
     /* margin-right: 10px; */
     /* top: 0px; */
     /* left: 0px; */
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
     /* border: 0px; */
     border-radius: 50%;
     /* perspective: 1px; */
@@ -64,8 +64,8 @@
     position: relative;
     text-align: center;
     flex: 0 0 auto;
-    height: 48px;
-    width: 48px;
+    height: 72px;
+    width: 72px;
 }
 
 .initials {
