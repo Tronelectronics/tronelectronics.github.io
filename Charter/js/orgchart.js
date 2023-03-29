@@ -14,7 +14,7 @@ $(document).ready(function () {
             attributes: {
                 role: 'Overall Project Manager',
                 photo: getImgText(
-                    'https://avatars.services.sap.com/'
+                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
                 )
             }
         },
