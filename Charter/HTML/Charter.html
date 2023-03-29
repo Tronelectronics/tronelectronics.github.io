@@ -1,42 +1,121 @@
-<html>
+<!DOCTYPE html>
 
 <head>
+    <link rel="stylesheet" href="../css/calendarstyledatedisplay.css">
+    <link rel="stylesheet" href="../css/circle.css">
     <link rel="stylesheet" href="../css/orgchart.css">
     <link rel="stylesheet" href="../css/persona.css">
+    <link rel="stylesheet" href="../css/progressbar.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/table.css">
     <link rel="stylesheet" href="../css/timelinehorizontal.css">
     <link rel="stylesheet" href="../css/timelinevertical.css">
+    <link rel="stylesheet" href="../css/tooltip.css">
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="https://code.jscharting.com/latest/jscharting.js"></script>
     <script src="../js/orgchart.js"></script>
+    <script src="../js/progressbar.js"></script>
 </head>
 
 <body>
     <div style="margin:0 auto;width:1000px;">
         <table class="bordered">
             <tr>
-                <td style="font-weight:bold;text-align:center;">Project Charter</td>
+                <td style="font-weight:bold;text-align:center;">
+                    <div>
+                        <div id="redlight" class="circle" style="opacity: 10%;"></div>
+                        <div id="amberlight" class="circle" style="opacity: 10%;"></div>
+                        <div id="greenlight" class="circle"></div>
+                    </div>
+                </td>
             </tr>
             <tr>
-                <th>Org Chart</th>
+                <td style="font-weight:bold;text-align:center;">
+                    Project Charter
+                    <div class="tooltip">
+                        <button>?</button>
+                        <div class="bottom">
+                            <img src="http://www.menucool.com/tooltip/cssttp/tooltip-head.jpg" />
+                            <div class="text-content">
+                                <h3>What is Charter?</h3>
+                                <ul>
+                                    <li>
+                                        A project charter is a document that details your project's goals, benefits,
+                                        constraints,
+                                        risks, stakeholders, and even budgets. It may also be referred to as a project
+                                        brief or
+                                        project definition document.
+                                    </li>
+                                    <li>
+                                        The Project Management Institute (PMI) defines a project charter as "a document
+                                        issued by the
+                                        project initiator or sponsor that formally authorizes the existence of a
+                                        project, and
+                                        provides the project manager with the authority to apply organizational
+                                        resources to project
+                                        activities."
+                                    </li>
+                                    <li>
+                                        The purpose of a project charter is to set clear project expectations so you can
+                                        lead even
+                                        the largest teams and complex projects to an on-time and under-budget delivery.
+                                        A project
+                                        charter also brings benefits like aligning stakeholders and teams to the
+                                        project's
+                                        objectives and clarifying important details that could impact the project.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Progress</th>
             </tr>
             <tr>
                 <td>
-                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div class="progress">
+                        <div class="circle">
+                            <span class="label">1</span>
+                            <span class="title">Discover</span>
+                        </div>
+                        <span class="bar"></span>
+                        <div class="circle">
+                            <span class="label">2</span>
+                            <span class="title">Prepare</span>
+                        </div>
+                        <span class="bar"></span>
+                        <div class="circle">
+                            <span class="label">3</span>
+                            <span class="title">Explore</span>
+                        </div>
+                        <span class="bar"></span>
+                        <div class="circle">
+                            <span class="label">4</span>
+                            <span class="title">Realize</span>
+                        </div>
+                        <span class="bar"></span>
+                        <div class="circle">
+                            <span class="label">5</span>
+                            <span class="title">Deploy</span>
+                        </div>
+                        <span class="bar"></span>
+                        <div class="circle">
+                            <span class="label">6</span>
+                            <span class="title">Run</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Stakeholders</th>
+            </tr>
+            <tr>
+                <td>
                     <div>
                         <div style="float:left; width:990px;">
-                            <div>
-                                <div style="float:left;">
-                                    <img height="30px" width="30px"
-                                        src="https://cdn3.iconfinder.com/data/icons/seo-black-fill-easy-1/128/target_group_group_People_Friends_Group_Conversation_Team_Community-512.png" />
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Stakeholders</b></div>
-                            </div>
                             <div>
                                 <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
                                     <div>
@@ -54,10 +133,10 @@
                                                                             class="ms-Persona-coin ms-Persona--size72 coin-499">
                                                                             <div role="presentation"
                                                                                 class="ms-Persona-imageArea imageArea">
-                                                                                <div class="ms-Image ms-Persona-image image"
-                                                                                    style="width: 48px; height: 48px;">
+                                                                                <div
+                                                                                    class="ms-Image ms-Persona-image image">
                                                                                     <img class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
-                                                                                        src="https://www.bing.com/th?id=OSK.149e1e0806a1183213b0aac37e4b9ccd&w=120&h=120&c=12&o=6&dpr=1.1&pid=SANGAM"
+                                                                                        src="https://ts1.cn.mm.bing.net/th?id=AMMS_ec1bc02d4f8fe0f03f295bb13be35ca4&w=122&h=183&c=12&rs=1&o=5&dpr=1.2&pid=3.1&rm=2"
                                                                                         alt="Profile picture of Elon Musk">
                                                                                 </div>
                                                                             </div>
@@ -68,10 +147,11 @@
                                                                     <h1 data-log-name="DisplayName" class="primaryText"
                                                                         title="Elon Musk">Elon Musk</h1>
                                                                     <div class="subtitle" data-log-name="JobTitle"
-                                                                        title="PMO and AME Leader">founder & CEO
+                                                                        title="CEO and product architect">CEO and
+                                                                        product architect
                                                                     </div>
                                                                     <div class="subtitle" data-log-name="Department"
-                                                                        title="PMO">Tesla
+                                                                        title="Tesla">Tesla
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -94,10 +174,10 @@
                                                                             class="ms-Persona-coin ms-Persona--size72 coin-517">
                                                                             <div role="presentation"
                                                                                 class="ms-Persona-imageArea imageArea">
-                                                                                <div class="ms-Image ms-Persona-image image"
-                                                                                    style="width: 48px; height: 48px;">
+                                                                                <div
+                                                                                    class="ms-Image ms-Persona-image image">
                                                                                     <img class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
-                                                                                        src="https://www.bing.com/th?id=OSK.f2d487bf65735caebf962979b5f8e177&w=120&h=120&c=12&o=6&dpr=1.1&pid=SANGAM"
+                                                                                        src="https://ts1.cn.mm.bing.net/th?id=AMMS_bcd3cc74ce9afc455c5b404b9fa1e652&w=165&h=183&c=12&rs=1&o=5&dpr=1.2&pid=3.1&rm=2"
                                                                                         alt="Profile picture of Tim Cook">
                                                                                 </div>
                                                                             </div>
@@ -108,11 +188,11 @@
                                                                     <h1 data-log-name="DisplayName" class="primaryText"
                                                                         title="Tim Cook">Tim Cook</h1>
                                                                     <div class="subtitle" data-log-name="JobTitle"
-                                                                        title="Director, Digital Solution">chief
-                                                                        executive officer
+                                                                        title="chief executive officer">chief executive
+                                                                        officer
                                                                     </div>
                                                                     <div class="subtitle" data-log-name="Department"
-                                                                        title="Marketing">
+                                                                        title="Apple Inc.">
                                                                         Apple Inc.</div>
                                                                 </div>
                                                             </div>
@@ -137,10 +217,10 @@
                                                                             class="ms-Persona-coin ms-Persona--size72 coin-517">
                                                                             <div role="presentation"
                                                                                 class="ms-Persona-imageArea imageArea">
-                                                                                <div class="ms-Image ms-Persona-image image"
-                                                                                    style="width: 48px; height: 48px;">
+                                                                                <div
+                                                                                    class="ms-Image ms-Persona-image image">
                                                                                     <img class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
-                                                                                        src="https://www.bing.com/th?id=Ad2c825127ff01f2c1a781ba31501be46&w=120&h=120&c=12&o=6&dpr=1.1&pid=SANGAM"
+                                                                                        src="https://ts1.cn.mm.bing.net/th?id=AMMS_ad647af16afba259495f024dcedce8b8&w=183&h=183&c=12&rs=1&o=5&dpr=1.2&pid=3.1&rm=2"
                                                                                         alt="Profile picture of Satya Nadella">
                                                                                 </div>
                                                                             </div>
@@ -151,11 +231,11 @@
                                                                     <h1 data-log-name="DisplayName" class="primaryText"
                                                                         title="Satya Nadella">Satya Nadella</h1>
                                                                     <div class="subtitle" data-log-name="JobTitle"
-                                                                        title="Director, Digital Solution">executive
+                                                                        title="executive chairman & CEO">executive
                                                                         chairman & CEO
                                                                     </div>
                                                                     <div class="subtitle" data-log-name="Department"
-                                                                        title="Marketing">
+                                                                        title="Microsoft">
                                                                         Microsoft</div>
                                                                 </div>
                                                             </div>
@@ -170,19 +250,15 @@
                         </div>
                         <div style="clear:both;"></div>
                     </div>
-                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                </td>
+            </tr>
+            <tr>
+                <th>Team(s)</th>
+            </tr>
+            <tr>
+                <td>
                     <div>
                         <div style="float:left; width:990px;">
-                            <div>
-                                <div style="float:left;">
-                                    <img height="30px" width="30px"
-                                        src="https://cdn3.iconfinder.com/data/icons/seo-black-fill-easy-1/128/target_group_group_People_Friends_Group_Conversation_Team_Community-512.png" />
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Project Team</b></div>
-                            </div>
                             <div>
                                 <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
                                     <div id="chartDiv1" class="chartDiv" style="max-width:900px;height:666px"></div>
@@ -191,7 +267,6 @@
                         </div>
                         <div style="clear:both;"></div>
                     </div>
-                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
                 </td>
             </tr>
             <tr>
@@ -298,334 +373,125 @@
                 <td>
                     <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
                     <div>
-                        <div style="border-right:1px dashed black; float:left; width:495px;">
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148335.png">
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Background / Context / Overview</b></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
                             <div>
-                                <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn2.iconfinder.com/data/icons/business-strategy-16/64/Key-dollar-solution-opportunity-128.png">
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Problem(s) / Opportunities</b></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                <div>
-                                    <div style="padding-bottom:5px;"></div>
-                                    Currently, the system Archbishop Library at University of California, Los Angeles
-                                    presents much delay with the labeling system of book and textbooks. By implementing
-                                    a new eBook technology in the library, it will decrease cost in purchasing paper
-                                    books, reduce time in locating the actual books and expand the selection of books
-                                    students have access to.
-                                    <div style="padding-bottom:5px;"></div>
-                                </div>
+                                <div style="padding-bottom:5px;"></div>
+                                The old version of IR controllers (e.g. SE, SG, SG.N, CMC) are using MODBUS protocol
+                                as the communication protocol.
+                                <br><br>
+                                The new version of IR controllers (e.g. SCi/SCn) are using Mitsubishi protocol,
+                                (e.g., Luminance) are using MODBUS RTU protocol.
+                                <br><br>
+                                There are many kinds of communion protocol (e.g. Canbus, Modbus, OPC DA, OPC UA,
+                                Profibus, RS232, RS485, etc.). Modbus is one of the most commonly used protocol
+                                among them.
+                                <br><br>
+                                Since then, it is easily for the industrial integration service provider (e.g.
+                                Emerson, GE, Honeywell, Rockwell, Schneider Electric, Siemens, etc.) or even
+                                customers themselves to build their solution(s) or use their SCADA software to
+                                capture machine data from our products installed at customers' site.
+                                <br><br>
+                                There also gives our competitors the possibilities to generate the service
+                                leads/opportunities by leveraging the machine data of our products and then predict
+                                for the upcoming maintenance which may have negative impact on our aftermarket
+                                service business.
+                                <br><br>
+                                One of our competitors (e.g. Atlas Copco) is using their private Canbus protocol.
+                                <br><br>
+                                From business perspective, if we could have our own private protocol, then we would
+                                have more control of data.
+                                <div style="padding-bottom:5px;"></div>
                             </div>
                         </div>
-                        <div style="float:left; width:495px;">
-                            <div>
-                                <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn4.iconfinder.com/data/icons/football/128/basket-empty.png" />
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Goal(s)</b></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                <div>
-                                    Improve access to high education book through library eBook technology.
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both;"></div>
                     </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148308.png">
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Problem(s) / Opportunities</b></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                            <div>
+                                <div style="padding-bottom:5px;"></div>
+                                Currently, the system Archbishop Library at University of California, Los Angeles
+                                presents much delay with the labeling system of book and textbooks. By implementing
+                                a new eBook technology in the library, it will decrease cost in purchasing paper
+                                books, reduce time in locating the actual books and expand the selection of books
+                                students have access to.
+                                <div style="padding-bottom:5px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148444.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Goal(s)</b></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                            <div>
+                                Improve access to high education book through library eBook technology.
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148466.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Objective(s)</b></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                            <div>
+                                <ul>
+                                    <li>Increase the ease of locating books through digital copies of hardcover
+                                        books.</li>
+                                    <li>Reduce paper waste</li>
+                                    <li>Increase accessibility of time when libraries are closed.</li>
+                                    <li>Increase a university's quality of education with better books for research
+                                        papers and class instruction.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
                     <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
                     <div>
                         <div style="border-right:1px dashed black; float:left; width:495px;">
                             <div>
                                 <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn2.iconfinder.com/data/icons/atrous/512/search_magnifying_glass_find-128.png">
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Background / Context / Overview</b></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                <div>
-                                    <div style="padding-bottom:5px;"></div>
-                                    The old version of IR controllers (e.g. SE, SG, SG.N, CMC) are using MODBUS protocol
-                                    as the communication protocol.
-                                    <br><br>
-                                    The new version of IR controllers (e.g. SCi/SCn) are using Mitsubishi protocol,
-                                    (e.g., Luminance) are using MODBUS RTU protocol.
-                                    <br><br>
-                                    There are many kinds of communion protocol (e.g. Canbus, Modbus, OPC DA, OPC UA,
-                                    Profibus, RS232, RS485, etc.). Modbus is one of the most commonly used protocol
-                                    among them.
-                                    <br><br>
-                                    Since then, it is easily for the industrial integration service provider (e.g.
-                                    Emerson, GE, Honeywell, Rockwell, Schneider Electric, Siemens, etc.) or even
-                                    customers themselves to build their solution(s) or use their SCADA software to
-                                    capture machine data from our products installed at customers' site.
-                                    <br><br>
-                                    There also gives our competitors the possibilities to generate the service
-                                    leads/opportunities by leveraging the machine data of our products and then predict
-                                    for the upcoming maintenance which may have negative impact on our aftermarket
-                                    service business.
-                                    <br><br>
-                                    One of our competitors (e.g. Atlas Copco) is using their private Canbus protocol.
-                                    <br><br>
-                                    From business perspective, if we could have our own private protocol, then we would
-                                    have more control of data.
-                                    <div style="padding-bottom:5px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="float:left; width:495px;">
-                            <div>
-                                <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn4.iconfinder.com/data/icons/success-filloutline/64/goal-target-idea-think-objective-128.png" />
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Objective(s)</b></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                <div>
-                                    <ul>
-                                        <li>Increase the ease of locating books through digital copies of hardcover
-                                            books.</li>
-                                        <li>Reduce paper waste</li>
-                                        <li>Increase accessibility of time when libraries are closed.</li>
-                                        <li>Increase a university's quality of education with better books for research
-                                            papers and class instruction.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
-                    <div>
-                        <div style="border-right:1px dashed black; float:left; width:495px;">
-                            <div>
-                                <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn0.iconfinder.com/data/icons/business-finance-1-1/128/roadmap-128.png" />
-                                </div>
-                                <div style="clear:both;"></div>
-                            </div>
-                            <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Implementation Plan</b></div>
-                            </div>
-                            <div>
-                                <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                    <div>
-                                        <table class="result-info" cellspacing="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-01-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Friday</span></td>
-                                                    <td class="status status-first">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="contex">Discover Phase Start.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-01-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-check">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="contex">Gate 0.</td>
-                                                </tr>
-                                                <tr class="last">
-                                                    <td class="row1"><span class="day">2023-01-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-first">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="contex">Discover Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-04-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Prepare Phase Start.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-04-30</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-check">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Gate 1.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-04-30</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Wednesday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Prepare Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-05-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Explore Phase Start.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-05-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Friday</span></td>
-                                                    <td class="status status-check">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Gate 2.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-05-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Explore Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-06-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Friday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Realize Phase Start.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-06-30</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-check">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Gate 3.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-06-30</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Realize Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-07-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Deploy Phase Start.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-07-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Sunday</span></td>
-                                                    <td class="status status-check">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Gate 4.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-07-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Friday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Deploy Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-08-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Thursday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Run Phase Start</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-08-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Monday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Gate 5.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-08-31</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Sunday</span></td>
-                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
-                                                                class="step"><span class="line1"></span><span
-                                                                    class="line2"></span></span></div>
-                                                    </td>
-                                                    <td class="context">Run Phase End.</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="row1"><span class="day">2023-09-01</span><span
-                                                            class="time"></span>&nbsp;&nbsp;<span
-                                                            class="week">Wednesday</span></td>
-                                                    <td class="status status-wait">&nbsp;</td>
-                                                    <td class="context">Project Close.</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div style="float:left; width:495px;">
-                            <div>
-                                <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn1.iconfinder.com/data/icons/adventure-outline-1/64/Adventure-Line-16-512.png">
+                                    <img height="40px" width="40px"
+                                        src="https://cdn-icons-png.flaticon.com/512/10148/10148498.png">
                                 </div>
                                 <div style="clear:both;"></div>
                             </div>
@@ -683,15 +549,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="clear:both;"></div>
-                    </div>
-                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
-                    <div>
-                        <div style="border-right:1px dashed black; float:left; width:495px;">
+                        <div style="float:left; width:495px;">
                             <div>
                                 <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn1.iconfinder.com/data/icons/social-icons-33/512/bitcoin-128.png" />
+                                    <img height="40px" width="40px"
+                                        src="https://cdn-icons-png.flaticon.com/512/9472/9472663.png" />
                                 </div>
                                 <div style="clear:both;"></div>
                             </div>
@@ -735,24 +597,503 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="float:left; width:495px;">
+                        <div style="clear:both;"></div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148402.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Benefits / Business Case / ROI</b></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                            Has ability to make additional profit after hours to borrow books online for
+                            convenience. For the user no late fees to borrow books except only pay borrowing fee.
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10148/10148501.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div><b>Outcome</b></div>
+                        </div>
+                        <div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/9932/9932435.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div>
+                                <b>Success (Key Factors)</b>
+                                <div class="tooltip">
+                                    <button>?</button>
+                                    <div class="left">
+                                        <img src="http://www.menucool.com/tooltip/cssttp/tooltip-head.jpg" />
+                                        <div class="text-content">
+                                            <h3>What is Success (Key Factors)?</h3>
+                                            <ul>
+                                                <li>
+                                                    A pretty basic example: If your deliverable is a Chocolate cake,
+                                                    then your critical
+                                                    success factors would be ingredients and baker. The key success
+                                                    factors would be
+                                                    controlling the temperature and identifying the baking time.
+                                                </li>
+                                                <li>
+                                                    Going a bit pro: If your deliverable is software, then your critical
+                                                    success factors
+                                                    would be experienced developers and key users' involvement. The key
+                                                    success factors
+                                                    would be adequate planning, requirement management, and clear
+                                                    communication.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10008/10008463.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div>
+                                <b>Success (Criteria / Factors / Metrics)</b>
+                                <div class="tooltip">
+                                    <button>?</button>
+                                    <div class="right">
+                                        <img src="http://www.menucool.com/tooltip/cssttp/tooltip-head.jpg" />
+                                        <div class="text-content">
+                                            <h3>What is Success (Criteria / Factors / Metrics)?</h3>
+                                            <ul>
+                                                <li>
+                                                    Let's say you've delivered a product or service on time and within
+                                                    budget - is that
+                                                    success? It could be, but not if it doesn't meet stakeholder
+                                                    expectations. Project
+                                                    success criteria are critical to know if, in fact, the project has
+                                                    met those metrics.
+                                                </li>
+                                                <li>
+                                                    Project management success is defined by how efficiently a project
+                                                    manager achieves the
+                                                    project's goals and objectives. Of course, you want to bring in a
+                                                    project before the
+                                                    deadline and under budget. That's all about using limited resources
+                                                    in the best way
+                                                    possible. But at the same time, you need to develop good
+                                                    relationships with all the
+                                                    stakeholders.
+                                                </li>
+                                                <li>
+                                                    Stakeholders have expectations that must be managed. Everyone who is
+                                                    invested in the
+                                                    project has a picture of what success looks like, and it's critical
+                                                    to understand and
+                                                    manage those expectations or else there will be stakeholders who
+                                                    feel the project has
+                                                    failed regardless of meeting the budget, schedule and scope goals.
+                                                </li>
+                                                <li>
+                                                    Another aspect of project management success is the quality of the
+                                                    product or service
+                                                    delivered. Who cares if you make a widget that won't work but
+                                                    delivered it on time and
+                                                    within the approved budget? You have to manage quality and never
+                                                    lose sight of the
+                                                    benefits that are the core goals and objectives of the project.
+                                                </li>
+                                                <li>
+                                                    That doesn't mean defining project management success is easy. There
+                                                    are a lot of factors
+                                                    to take into account and some of them can't be assessed until long
+                                                    after the project has
+                                                    closed. Therefore, it's important to understand project success and
+                                                    project management
+                                                    success are not the same things.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <i></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div style="float:left;padding-left:5px;">
+                                <img height="40px" width="40px"
+                                    src="https://cdn-icons-png.flaticon.com/512/10181/10181554.png" />
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;">
+                            <div>
+                                <b>Trade-offs</b>
+                                <div class="tooltip">
+                                    <button>?</button>
+                                    <div class="top">
+                                        <img src="http://www.menucool.com/tooltip/cssttp/tooltip-head.jpg" />
+                                        <div class="text-content">
+                                            <h3>What is Trade-offs?</h3>
+                                            <ul>
+                                                <li>
+                                                    The most common set of tradeoffs in project management is the
+                                                    classic
+                                                    "time, quality,
+                                                    scope" triangle. You can do something faster, but in order to do so
+                                                    you must sacrifice
+                                                    either quality or scope; you can do something bigger, but in order
+                                                    to do so you must
+                                                    sacrifice either quality or time; and you can do something high in
+                                                    quality, but in order
+                                                    to do so you must sacrifice either scope or time.
+                                                </li>
+                                                <li>
+                                                    A much bigger challenge that faces many project managers is trading
+                                                    off between:
+                                                </li>
+                                                <li>
+                                                    1. A traditional plan-driven approach to project management that
+                                                    emphasizes planning and
+                                                    control to achieve predictability over costs and schedules and
+                                                </li>
+                                                <li>
+                                                    2. A more flexible and adaptive Agile Project Management approach
+                                                    that emphasizes
+                                                    maximizing the value of the solution in an uncertain environment.
+                                                    This approach can also
+                                                    be critical where creativity and innovation is important.
+                                                </li>
+                                                <li>
+                                                    There is not a binary and mutually-exclusive choice between these
+                                                    two
+                                                    approaches and it
+                                                    can be a big challenge to find the right trade off that blends these
+                                                    two approaches in
+                                                    the right proportions to fit a given situation.
+                                                </li>
+                                                <li>
+                                                    1. Time vs. Quality: The project manager must decide whether to
+                                                    focus
+                                                    on delivering the
+                                                    project on time or ensuring a high quality end product.
+                                                </li>
+                                                <li>
+                                                    2. Cost vs. Scope: The project manager must decide how much the
+                                                    project should cost and
+                                                    what the scope of the project will be.
+                                                </li>
+                                                <li>
+                                                    3. Resources vs. Risk: The project manager must decide how many
+                                                    resources to allocate to
+                                                    the project and how much risk to take on.
+                                                </li>
+                                                <li>
+                                                    4. Stakeholders vs. Objectives: The project manager must decide how
+                                                    to balance the needs
+                                                    of stakeholders with the objectives of the project.
+                                                </li>
+                                                <li>
+                                                    5. Flexibility vs. Efficiency: The project manager must decide how
+                                                    much flexibility to
+                                                    allow in the project and how efficient the project should be.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                </td>
+            </tr>
+            <tr>
+                <th>Plan & Deliverables</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <div style="border-right:1px dashed black; float:left; width:495px;">
                             <div>
                                 <div style="float:left;padding-left:5px;">
-                                    <img height="36px" width="36px"
-                                        src="https://cdn2.iconfinder.com/data/icons/business-charts-free-pack/2253/line_chart_parallel-128.png" />
+                                    <img height="40px" width="40px"
+                                        src="https://cdn-icons-png.flaticon.com/512/8787/8787405.png" />
                                 </div>
                                 <div style="clear:both;"></div>
                             </div>
                             <div style="padding-bottom:10px;padding-left:33px;">
-                                <div><b>Business Case & Benefits</b></div>
+                                <div><b>Implementation Plan</b></div>
+                            </div>
+                            <div>
+                                <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                    <div>
+                                        <table class="result-info" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-01-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Friday</span></td>
+                                                    <td class="status status-first">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="contex">Discover Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-01-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-check">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="contex">Gate 0</td>
+                                                </tr>
+                                                <tr class="last">
+                                                    <td class="row1"><span class="day">2023-01-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-first">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="contex">Discover Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-04-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Prepare Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-04-30</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-check">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Gate 1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-04-30</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Wednesday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Prepare Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-05-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Explore Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-05-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Friday</span></td>
+                                                    <td class="status status-check">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Gate 2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-05-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Explore Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-06-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Friday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Realize Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-06-30</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-check">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Gate 3</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-06-30</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Realize Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-07-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Deploy Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-07-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Sunday</span></td>
+                                                    <td class="status status-check">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Gate 4</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-07-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Friday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Deploy Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-08-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Thursday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Run Phase Start</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-08-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Monday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Gate 5</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-08-31</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Sunday</span></td>
+                                                    <td class="status status-wait">&nbsp;<div class="col2"><span
+                                                                class="step"><span class="line1"></span><span
+                                                                    class="line2"></span></span></div>
+                                                    </td>
+                                                    <td class="context">Run Phase End</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="row1"><span class="day">2023-09-01</span><span
+                                                            class="time"></span>&nbsp;&nbsp;<span
+                                                            class="week">Wednesday</span></td>
+                                                    <td class="status status-wait">&nbsp;</td>
+                                                    <td class="context">Project Close</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; width:495px;">
+                            <div>
+                                <div style="float:left;padding-left:5px;">
+                                    <img height="40px" width="40px"
+                                        src="https://cdn-icons-png.flaticon.com/512/3687/3687024.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Deliverables</b></div>
                             </div>
                             <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
-                                Has ability to make additional profit after hours to borrow books online for
-                                convenience. For the user no late fees to borrow books except only pay borrowing fee.
+                                <div>
+                                    Improve access to high education book through library eBook technology.
+                                </div>
                             </div>
                         </div>
                         <div style="clear:both;"></div>
                     </div>
+                </td>
+            </tr>
+            <tr>
+                <th>RAID</th>
+            </tr>
+            <tr>
+                <td>
                     <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
                     <div>
                         <div style="border-right:1px dashed black; float:left; width:495px;">
@@ -874,9 +1215,9 @@
                         <tr>
                             <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
                                 <div style="float:left;">
-                                    <div style="border: 1px dashed gray;height:100px;margin:0 auto;width:100px;"><img
+                                    <div style="border: 1px dashed gray;height:72px;margin:0 auto;width:72px;"><img
                                             src="https://ts1.cn.mm.bing.net/th?id=OIP-C.ZETGj-7Mu1BiuOgadwIzUgHaHv&w=197&h=206&c=8&rs=1&qlt=90&o=6&dpr=1.2&pid=3.1&rm=2"
-                                            style="border-radius:50%;height:100px;width:100px;" /></div>
+                                            style="border-radius:50%;height:72px;width:72px;" /></div>
                                     <div class="divEmployeeName">C Ronaldo</div>
                                 </div>
                             </td>
@@ -885,16 +1226,23 @@
                                     <li></li>
                                 </ul>
                             </td>
-                            <td style="border-right: 1px dashed gray;text-align:center;">2023-03-31</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2014-09-24" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">31</span>
+                                    <span class="month">March</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
                             <td style="border-right: 1px dashed gray;text-align:center;">Workshop Team</td>
                             <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
                         </tr>
                         <tr>
                             <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
                                 <div style="float:left;">
-                                    <div style="border: 1px dashed gray;height:100px;margin:0 auto;width:100px;">
+                                    <div style="border: 1px dashed gray;height:72px;margin:0 auto;width:72px;">
                                         <img src="https://tse3-mm.cn.bing.net/th/id/OIP-C.__yhE48NTh3uQJKFWb6ZfAAAAA?w=150&h=150&c=7&r=0&o=5&dpr=1.2&pid=1.7"
-                                            style="border-radius:50%;height:100px;width:100px;" />
+                                            style="border-radius:50%;height:72px;width:72px;" />
                                     </div>
                                     <div class="divEmployeeName">David Beckham</div>
                                 </div>
@@ -904,16 +1252,23 @@
                                     <li></li>
                                 </ul>
                             </td>
-                            <td style="border-right: 1px dashed gray;text-align:center;">2023-03-31</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2014-09-24" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">31</span>
+                                    <span class="month">March</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
                             <td style="border-right: 1px dashed gray;text-align:center;">Workshop Team</td>
                             <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
                         </tr>
                         <tr>
                             <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
                                 <div style="float:left;">
-                                    <div style="border: 1px dashed gray;height:100px;margin:0 auto;width:100px;"><img
+                                    <div style="border: 1px dashed gray;height:72px;margin:0 auto;width:72px;"><img
                                             src="https://tse1-mm.cn.bing.net/th/id/OIP-C.jKHBRVWDytTl9XLqRRQ7kAHaJ4?w=137&h=183&c=7&r=0&o=5&dpr=1.2&pid=1.7"
-                                            style="border-radius:50%;height:100px;width:100px;" /></div>
+                                            style="border-radius:50%;height:72px;width:72px;" /></div>
                                     <div class="divEmployeeName">Lionel Messi</div>
                                 </div>
                             </td>
@@ -922,7 +1277,14 @@
                                     <li></li>
                                 </ul>
                             </td>
-                            <td style="border-right: 1px dashed gray;text-align:center;">2023-03-31</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2014-09-24" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">31</span>
+                                    <span class="month">March</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
                             <td style="border-right: 1px dashed gray;text-align:center;">Workshop Team</td>
                             <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
                         </tr>
