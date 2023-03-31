@@ -204,3 +204,11 @@
     background-color: #009cdc;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
+
+.tooltip .left img {
+    width: 300px;
+}
+
+.tooltip .top img {
+    width: 300px;
+}
