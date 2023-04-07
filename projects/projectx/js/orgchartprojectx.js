@@ -93,7 +93,7 @@ $(document).ready(function () {
         },
         {
             x: 'Liang, Karon',
-            id: 'Liang, Karon',
+            id: 'LiangKaron',
             parent: 'YingSimon',
             attributes: {
                 role: 'Delivery', photo: getImgText(
