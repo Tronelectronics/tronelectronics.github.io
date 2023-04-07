@@ -1,0 +1,90 @@
+/* td {
+    font: 12px "Microsoft YaHei", Verdana, arial, sans-serif;
+    line-height: 22px;
+} */
+
+.day {
+    display: block;
+    font: 12px "Microsoft YaHei", Verdana, arial, sans-serif;
+    line-height: 22px;
+}
+
+.queryRight {
+    float: right;
+    margin-right: 10px;
+}
+
+/*result-info*/
+.result-info {
+    width: 444px;
+    float: left;
+}
+
+.result-info .last td,
+.result-info .last td a {
+    color: #ff7800;
+    border-bottom: none;
+}
+
+.result-info .row1 {
+    width: 105px;
+    text-align: center;
+    padding-left: 14px;
+    padding-right: 0;
+}
+
+.result-info-down .status {
+    width: 30px;
+    background: url("http://www.kuaidi100.com/images/spider_search_v4.png") -30px -764px no-repeat;
+}
+
+.result-info .status {
+    width: 30px;
+    background: url("http://www.kuaidi100.com/images/spider_search_v4.png") 13px -764px no-repeat;
+}
+
+.result-info .status-check {
+    background: url("http://www.kuaidi100.com/images/spider_search_v4.png") 10px -717px no-repeat;
+}
+
+.result-info .status-first {
+    background: url("http://www.kuaidi100.com/images/spider_search_v4.png") 13px -804px no-repeat;
+}
+
+.result-info .status-wait {
+    background: url("http://www.kuaidi100.com/images/spider_search_v4.png") -30px -802px no-repeat;
+}
+
+.result-info td {
+    background-color: #f5f5f5;
+    color: #828282;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 7px;
+    /* border-bottom: 1px solid #d2d2d2; */
+}
+
+.result-info td a:hover {
+    color: #3278e6;
+}
+
+.status .col2 {
+    position: relative;
+    z-index: -1;
+}
+
+.status .line1 {
+    position: absolute;
+    left: 6.4px;
+    width: 0.57em;
+    height: 5em;
+    border-right: 1px solid #d2d2d2;
+    top: -5px;
+    z-index: -1;
+}
+
+.time {
+    font-size: 13px;
+}
