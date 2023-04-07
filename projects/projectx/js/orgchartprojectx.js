@@ -36,7 +36,7 @@ $(document).ready(function () {
             attributes: {
                 role: 'PMO',
                 photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
+                    '../persona/Xu, Owen.jfif'
                 )
             }
         },
@@ -52,12 +52,72 @@ $(document).ready(function () {
             }
         },
         {
+            x: 'Chen, Dong',
+            id: 'ChenDong',
+            parent: 'YingSimon',
+            attributes: {
+                role: 'IT Manager', photo: getImgText(
+                    '../persona/Chen, Dong.jfif'
+                )
+            }
+        },
+        {
+            x: 'Hong, Ganghong',
+            id: 'HongGanghong',
+            parent: 'KangZijin',
+            attributes: {
+                role: 'Commercial', photo: getImgText(
+                    '../persona/Hong, Ganghong.jfif'
+                )
+            }
+        },
+        {
+            x: 'Jiang, Josslyn',
+            id: 'JiangJosslyn',
+            parent: 'YingSimon',
+            attributes: {
+                role: 'Legal Counsel', photo: getImgText(
+                    '../persona/Jiang, Josslyn.jfif'
+                )
+            }
+        },
+        {
+            x: 'Kang, Zijin',
+            id: 'KangZijin',
+            parent: 'YingSimon',
+            attributes: {
+                role: 'Commercial', photo: getImgText(
+                    '../persona/Kang, Zijin.jfif'
+                )
+            }
+        },
+        {
+            x: 'Liang, Karon',
+            id: 'Liang, Karon',
+            parent: 'YingSimon',
+            attributes: {
+                role: 'Delivery', photo: getImgText(
+                    '../persona/Liang, Karon.jfif'
+                )
+            }
+        },
+        {
             x: 'Liu, Yin',
             id: 'LiuYin',
             parent: 'YingSimon',
             attributes: {
                 role: 'Product Manager', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
+                    '../persona/Liu, Yin.jfif'
+                )
+            }
+        },
+        {
+            x: 'Wang, Bob',
+            id: 'WangBob',
+            parent: 'YingSimon',
+            attributes: {
+                role: 'Procurement', photo: getImgText(
+                    '../persona/Wang, Bob.jfif'
                 )
             }
         },
@@ -68,56 +128,6 @@ $(document).ready(function () {
             attributes: {
                 role: 'Engineering', photo: getImgText(
                     '../persona/Zhong, Xiaohu.jfif'
-                )
-            }
-        },
-        {
-            x: 'Wang, Bob',
-            id: 'WangBob',
-            parent: 'YingSimon',
-            attributes: {
-                role: 'Procurement', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
-                )
-            }
-        },
-        {
-            x: 'Liang, Karon',
-            id: 'Liang, Karon',
-            parent: 'YingSimon',
-            attributes: {
-                role: 'Delivery', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
-                )
-            }
-        },
-        {
-            x: 'Kang, Zijin',
-            id: 'KangZijin',
-            parent: 'YingSimon',
-            attributes: {
-                role: 'Commercial', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
-                )
-            }
-        },
-        {
-            x: 'Hong, Ganghong',
-            id: 'HongGanghong',
-            parent: 'KangZijin',
-            attributes: {
-                role: 'Commercial', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
-                )
-            }
-        },
-        {
-            x: 'TBA',
-            id: 'TBA',
-            parent: 'YingSimon',
-            attributes: {
-                role: 'IT', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
                 )
             }
         }
