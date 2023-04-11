@@ -198,6 +198,16 @@ $(document).ready(function () {
             }
         },
         {
+            x: 'Liu, Xi',
+            id: 'LiuXi',
+            parent: 'LiDong',
+            attributes: {
+                role: 'SFA Business Partner', photo: getImgText(
+                    '../persona/Liu, Xi.jfif'
+                )
+            }
+        },
+        {
             x: 'Lu, Derrick',
             id: 'LuDerrick',
             parent: 'YingSimon',
