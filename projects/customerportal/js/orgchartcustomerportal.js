@@ -19,12 +19,12 @@ $(document).ready(function () {
             }
         },
         {
-            x: 'Ding, Liang',
-            id: 'DingLiang',
+            x: 'Procurement Manager',
+            id: 'ProcurementManager',
             parent: 'DSG',
             attributes: {
                 role: 'Procurement', photo: getImgText(
-                    '../persona/Ding, Liang.jfif'
+                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
                 )
             }
         },
@@ -60,12 +60,12 @@ $(document).ready(function () {
             }
         },
         {
-            x: 'Jing, Rex',
-            id: 'JingRex',
+            x: 'IT',
+            id: 'IT',
             parent: 'DSG',
             attributes: {
-                role: 'IT Project Manager', photo: getImgText(
-                    '../persona/Jing, Rex.jfif'
+                role: 'IT', photo: getImgText(
+                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
                 )
             }
         },
