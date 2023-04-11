@@ -88,7 +88,7 @@ $(document).ready(function () {
             id: 'GuoMark',
             parent: 'WangJun',
             attributes: {
-                role: 'PMO',
+                role: 'PMO and AME Leader',
                 photo: getImgText(
                     '../persona/Guo, Mark.jfif'
                 )
