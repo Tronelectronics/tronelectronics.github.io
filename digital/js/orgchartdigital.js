@@ -96,10 +96,10 @@ $(document).ready(function () {
         },
         {
             x: 'IT Application',
-            id: 'ITCyberSecu',
+            id: 'ITApplication',
             parent: 'LuTony',
             attributes: {
-                role: 'Cyber Security', photo: getImgText(
+                role: 'Application', photo: getImgText(
                     'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
                 )
             }
