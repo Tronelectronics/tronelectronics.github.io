@@ -60,12 +60,12 @@ $(document).ready(function () {
             }
         },
         {
-            x: 'IT',
-            id: 'IT',
+            x: 'Chen, Dong',
+            id: 'ChenDong',
             parent: 'DSG',
             attributes: {
-                role: 'IT', photo: getImgText(
-                    'https://www.sap.com/content/dam/application/shared/icons/default-avatar.png'
+                role: 'IT Manager', photo: getImgText(
+                    '../persona/Chen, Dong.jfif'
                 )
             }
         },
