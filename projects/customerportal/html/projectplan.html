@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Timeline | styling | Templates</title>
+
+    <!-- load handlebars for templating, and create a template -->
+    <script src="../js/handlebars.min.js"></script>
+    <script id="item-template" type="text/x-handlebars-template">
+    <table class="score">
+      <tr>
+        <td class="description"><b>{{task}}</b></td>
+      </tr>
+      <tr>
+        <td>{{team}} - {{persona}}</td>
+      </tr>
+      <tr>
+        <td><img src="../persona/{{persona}}.jfif" width="50" height="50" alt="{{persona}}" /></td>
+      </tr>
+    </table>
+  </script>
+
+    <script src="../js/vis-timeline-graph2d.min.js"></script>
+    <link href="../css/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        body,
+        html {
+            font-family: sans-serif;
+            font-size: 10pt;
+        }
+
+        .vis.timeline .item {
+            border-color: #acacac;
+            background-color: #efefef;
+            box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.3);
+        }
+
+        table .description {
+            font-style: italic;
+        }
+
+        #visualization {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>Customer Portal 2.0 Project Plan</h1>
+    <p style="max-width: 600px;">
+
+    </p>
+
+    <div id="visualization"></div>
+
+    <script type="text/javascript">
+        // create a handlebars template
+        var source = document.getElementById('item-template').innerHTML;
+        var template = Handlebars.compile(document.getElementById('item-template').innerHTML);
+
+        // DOM element where the Timeline will be attached
+        var container = document.getElementById('visualization');
+
+        // Create a DataSet (allows two way data-binding)
+        var items = new vis.DataSet([
+            // round of 16
+            {
+                task: 'Strategic Planning',
+                team: 'Digital Product',
+                persona: 'Lu, Derrick',
+                start: '2023-02-01',
+                end: '2023-02-28',
+            },
+            {
+                task: 'Value and Scoping',
+                team: 'Digital Product',
+                persona: 'Lu, Derrick',
+                start: '2023-03-01',
+                end: '2023-03-24'
+            },
+            {
+                task: 'Business Case',
+                team: 'Digital Product',
+                persona: 'Lu, Derrick',
+                start: '2023-03-13',
+                end: '2023-03-31'
+            },
+            {
+                task: 'Initiation',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-01'
+            },
+            {
+                task: 'Governance',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-01'
+            },
+            {
+                task: 'Kick-Off',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-07'
+            },
+            {
+                task: 'Technical Standard',
+                team: 'Engineering',
+                persona: 'Qian, Colin',
+                start: '2023-04-10'
+            },
+            {
+                task: 'On-boarding',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-14'
+            },
+            {
+                task: 'Team Enablement',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-17'
+            },
+            {
+                task: 'Training Strategy & Plan',
+                team: 'Digital Product',
+                persona: 'Lu, Derrick',
+                start: '2023-04-18'
+            },
+            {
+                task: 'Technical Requirements and Solution Plan',
+                team: 'Engineering',
+                persona: 'Qian, Colin',
+                start: '2023-04-19'
+            },
+            {
+                task: 'Demo Environment',
+                team: 'Engineering',
+                persona: 'Qian, Colin',
+                start: '2023-04-24'
+            },
+            {
+                task: 'Interface Inventory',
+                team: 'Engineering',
+                persona: 'Qian, Colin',
+                start: '2023-04-24'
+            },
+            {
+                task: 'Prepare Test Policy',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-04-28'
+            },
+            {
+                task: 'Plan Solution Validation Workshop',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-04-24'
+            },
+            {
+                task: 'Solution Validation Workshop',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-05-01'
+            },
+            {
+                task: 'Technical Solution Design',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-05-08'
+            },
+            {
+                task: 'Development Environment',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-05-15'
+            },
+            {
+                task: 'Fit-Gap Analysis',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-05-01'
+            },
+            {
+                task: 'Baseline Plan',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-05-15'
+            },
+            {
+                task: 'Baseline Build',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-05-19'
+            },
+            {
+                task: 'Baseline Build Sign-Off',
+                team: 'PMO',
+                persona: 'Xu, Owen',
+                start: '2023-05-31'
+            },
+            {
+                task: 'User Access and Security',
+                team: 'Vendor',
+                persona: 'TBD',
+                start: '2023-06-01'
+            },
+            {
+                task: 'Backlog Prioritizing',
+                team: 'Digital Product',
+                persona: 'Lu, Derrick',
+                start: '2023-06-01'
+            }
+        ]);
+
+        // Configuration for the Timeline
+        var options = {
+            // specify a template for the items
+            template: template
+        };
+
+        // Create a Timeline
+        var timeline = new vis.Timeline(container, items, options);
+    </script>
+</body>
+
+</html>
