@@ -1,0 +1,967 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/calendarstyledatedisplay.css">
+    <link rel="stylesheet" href="css/timelinehorizontal.css">
+    <link rel="stylesheet" href="css/table.css">
+    <style>
+        .av6-pipS {
+            flex: 1 0 242px;
+            max-width: 242px;
+        }
+
+        .container-1 {
+            box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+            border-radius: 6px;
+            border: 1px solid rgb(234, 234, 234);
+            width: 242px;
+        }
+
+        .container-2 {
+            height: 90px;
+            padding: 10px;
+            border-bottom: 1px solid rgb(243, 242, 241);
+            position: relative;
+            background: rgb(255, 255, 255);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box !important;
+        }
+
+        .details {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-height: 79px;
+            margin-left: 12px;
+            justify-content: center;
+            align-self: end;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image {
+            display: block;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image {
+            /* font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif; */
+            /* -webkit-font-smoothing: antialiased; */
+            /* font-size: 14px; */
+            /* font-weight: 400; */
+            overflow: hidden;
+            /* position: absolute; */
+            /* margin-right: 10px; */
+            /* top: 0px; */
+            /* left: 0px; */
+            width: 48px;
+            height: 48px;
+            /* border: 0px; */
+            border-radius: 50%;
+            /* perspective: 1px; */
+        }
+
+        .imageArea {
+            position: relative;
+            text-align: center;
+            flex: 0 0 auto;
+            height: 48px;
+            width: 48px;
+        }
+
+        .initials {
+            border-radius: 50%;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 48px;
+            height: 48px;
+        }
+
+        .personaInfo {
+            align-items: start;
+            display: flex;
+            margin-bottom: auto;
+        }
+
+        .personaPhoto {
+            width: fit-content;
+            height: fit-content;
+            flex-shrink: 0;
+            border-radius: 50%;
+            font-size: 28px;
+        }
+
+        .primaryText {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 17px;
+            font-weight: 600;
+            color: rgb(37, 36, 35);
+            line-height: 27px;
+            margin: 0px 0px 2px;
+            max-width: 176px;
+            cursor: text;
+        }
+
+        .subtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 19px;
+            color: rgb(37, 36, 35);
+            font-size: 12px;
+        }
+
+        .divEmployeeName {
+            width: 100px;
+            background-color: gray;
+            border-radius: 25px;
+            color: white;
+            float: left;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+            /* 老的 Firefox */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:1000px;">
+        <table class="bordered">
+            <tr>
+                <td style="font-weight:bold;text-align:center;">Meeting Minutes</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Title</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Digital Project Discussion Workshop.</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Attendees</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Chen, Cathier">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Chen, Cathier"
+                                                    title="Profile picture of Chen, Cathier">
+                                                    <div class="ms-Persona ms-Persona--size72 root-544">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-499">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea">
+                                                                <div class="ms-Image ms-Persona-image image"
+                                                                    style="width: 48px; height: 48px;"><img
+                                                                        class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                        src="persona/Chen, Cathier.jfif"
+                                                                        alt="Profile picture of Chen, Cathier"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText"
+                                                        title="Chen, Cathier">Chen, Cathier</h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="Director, Product Management, Asia Pacific">Director,
+                                                        Product
+                                                        Management, Asia Pacific</div>
+                                                    <div class="subtitle" data-log-name="Department"
+                                                        title="Product Management">Product Management</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Chen, Frank">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Chen, Frank"
+                                                    title="Profile picture of Chen, Frank">
+                                                    <div class="ms-Persona ms-Persona--size72 root-477">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-484">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea">
+                                                                <div class="ms-Image ms-Persona-image image"
+                                                                    style="width: 48px; height: 48px;"><img
+                                                                        class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                        src="persona/Chen, Frank.jfif"
+                                                                        alt="Profile picture of Chen, Frank"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText"
+                                                        title="Chen, Frank">Chen, Frank</h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="Sr. Electriacl Engineer">Sr. Electriacl Engineer</div>
+                                                    <div class="subtitle" data-log-name="Department"
+                                                        title="Electrical &amp; Control">Electrical &amp; Control</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Fan, George">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Fan, George"
+                                                    title="Profile picture of Fan, George">
+                                                    <div class="ms-Persona ms-Persona--size72 root-569">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-576">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea">
+                                                                <div class="ms-Image ms-Persona-image image"
+                                                                    style="width: 48px; height: 48px;"><img
+                                                                        class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                        src="persona/Fan, George.jfif"
+                                                                        alt="Profile picture of Fan, George"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText">Fan, George
+                                                    </h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="Engineering Director, Rotary">Engineering Director,
+                                                        Rotary</div>
+                                                    <div class="subtitle" data-log-name="Department"
+                                                        title="Product LCE">Product LCE</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Guo, Mark">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Guo, Mark"
+                                                    title="Profile picture of Guo, Mark">
+                                                    <div class="ms-Persona ms-Persona--size72 root-544">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-499">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea">
+                                                                <div class="ms-Image ms-Persona-image image"
+                                                                    style="width: 48px; height: 48px;"><img
+                                                                        class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                        src="persona/Guo, Mark.jfif"
+                                                                        alt="Profile picture of Guo, Mark"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText"
+                                                        title="Guo, Mark">Guo, Mark</h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="PMO and AME Leader">PMO and AME Leader</div>
+                                                    <div class="subtitle" data-log-name="Department" title="PMO">PMO
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Liu, Yin">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Liu, Yin"
+                                                    title="Profile picture of Liu, Yin">
+                                                    <div class="ms-Persona ms-Persona--size72 root-439">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-446">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea">
+                                                                <div class="ms-Persona-initials initials"
+                                                                    aria-hidden="true"
+                                                                    style="background-color: rgb(194, 57, 179);">
+                                                                    <span>LY</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText"
+                                                        title="Liu, Yin">Liu, Yin</h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="Product Manager, Service Solutions, China">Product
+                                                        Manager, Service Solutions, China</div>
+                                                    <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                        Marketing</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left; margin-right: 5px;">
+                            <div class="av6-pipS">
+                                <div>
+                                    <aside class="container-1" aria-label="Profile Card for Lu, Derrick">
+                                        <div class="container-2">
+                                            <div class="personaInfo">
+                                                <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                    aria-label="Profile picture of Lu, Derrick"
+                                                    title="Profile picture of Lu, Derrick">
+                                                    <div class="ms-Persona ms-Persona--size72 root-569">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-coin ms-Persona--size72 coin-576">
+                                                            <div role="presentation"
+                                                                class="ms-Persona-imageArea imageArea-577">
+                                                                <div class="ms-Image ms-Persona-image image"
+                                                                    style="width: 48px; height: 48px;"><img
+                                                                        class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                        src="persona/Lu, Derrick.jfif"
+                                                                        alt="Profile picture of Lu, Derrick"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="presentation" class="details">
+                                                    <h1 data-log-name="DisplayName" class="primaryText">Lu, Derrick
+                                                    </h1>
+                                                    <div class="subtitle" data-log-name="JobTitle"
+                                                        title="Product Manager, Digital Solution">Product Manager,
+                                                        Digital Solution</div>
+                                                    <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                    </div>
+                                                    Marketing
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <aside class="container-1" aria-label="Profile Card for Qian, Colin">
+                            <div class="container-2">
+                                <div class="personaInfo">
+                                    <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                        aria-label="Profile picture of Qian, Colin"
+                                        title="Profile picture of Qian, Colin">
+                                        <div class="ms-Persona ms-Persona--size72 root-495">
+                                            <div role="presentation"
+                                                class="ms-Persona-coin ms-Persona--size72 coin-502">
+                                                <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                    <div class="ms-Image ms-Persona-image image"
+                                                        style="width: 48px; height: 48px;"><img
+                                                            class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                            src="persona/Qian, Colin.jfif"
+                                                            alt="Profile picture of Qian, Colin"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="presentation" class="details">
+                                        <h1 data-log-name="DisplayName" class="primaryText" title="Qian, Colin">
+                                            Qian, Colin</h1>
+                                        <div class="subtitle" data-log-name="JobTitle" title="IoT Engineering Manager">
+                                            IoT Engineering Manager</div>
+                                        <div class="subtitle" data-log-name="Department"
+                                            title="Electrical &amp; Control">Electrical &amp; Control</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Xu, Owen">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Xu, Owen"
+                                                title="Profile picture of Xu, Owen">
+                                                <div class="ms-Persona ms-Persona--size72 root-430">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-437">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(209, 52, 56);">
+                                                                <span>XO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Xu, Owen">Xu,
+                                                    Owen</h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="Project Manager">
+                                                    Project Manager</div>
+                                                <div class="subtitle" data-log-name="Department" title="PMO">PMO
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Ying, Simon">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Ying, Simon"
+                                                title="Profile picture of Ying, Simon">
+                                                <div class="ms-Persona ms-Persona--size72 root-562">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-517">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Image ms-Persona-image image"
+                                                                style="width: 48px; height: 48px;"><img
+                                                                    class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                    src="persona/Ying, Simon.jfif"
+                                                                    alt="Profile picture of Ying, Simon"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Ying, Simon">
+                                                    Ying, Simon</h1>
+                                                <div class="subtitle" data-log-name="JobTitle"
+                                                    title="Director, Digital Solution">Director, Digital Solution
+                                                </div>
+                                                <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                    Marketing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Zhu, Olivia">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Zhu, Olivia"
+                                                title="Profile picture of Zhu, Olivia">
+                                                <div class="ms-Persona ms-Persona--size72 root-514">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-521">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(3, 131, 135);">
+                                                                <span>ZO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Zhu, Olivia">
+                                                    Zhu, Olivia</h1>
+                                                <div class="subtitle" data-log-name="JobTitle"
+                                                    title="Director, Sales Enablement &amp; Tendering, Service Solutions, CHN">
+                                                    Director, Sales Enablement &amp; Tendering, Service Solutions,
+                                                    CHN</div>
+                                                <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                    Marketing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+    </td>
+    </tr>
+    <tr>
+        <th>
+            <div>By</div>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div style="float:left;">
+                <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;"><img
+                        src="https://www.sap.com/content/dam/application/shared/icons/default-avatar.png"
+                        style="border-radius:50%;height:50px;width:50px;" /></div>
+                <div class="divEmployeeName">Xu, Owen</div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <div>Date</div>
+        </th>
+    </tr>
+    <tr>
+        <td>2023-04-20 10:00 ~ 2023-04-20 12:00 / Thursday, April 20, 2023 10:00 AM-12:00 PM</td>
+    </tr>
+    <tr>
+        <th>
+            <div>Location</div>
+        </th>
+    </tr>
+    <tr>
+        <td>Microsoft Teams Meeting; Nangu Rd, Engineering Center</td>
+    </tr>
+    <tr>
+        <th>
+            <div>Project</div>
+        </th>
+    </tr>
+    <tr>
+        <td>NA</td>
+    </tr>
+    <tr>
+        <th>
+            <div>Phase</div>
+        </th>
+    </tr>
+    <tr>
+        <td>NA</td>
+    </tr>
+    <tr>
+        <th>
+            <div>Sprint</div>
+        </th>
+    </tr>
+    <tr>
+        <td>NA</td>
+    </tr>
+    <tr>
+        <th>Documents</th>
+    </tr>
+    <tr>
+        <td>
+            NA
+        </td>
+    </tr>
+    <tr>
+        <th>Discussed Points</th>
+    </tr>
+    <tr>
+        <td>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+            <div>
+                <div style="border-right:1px dashed black; float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Digital Pipeline</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            There should ba a Digtial Pipeline to align with MLB to create resource plan, and
+                            then allocate resource and prioritize resource. (e.g. Some of the Digital Projects
+                            may need to integrate with Salesforce. Thus, a Digital Pipeline booking Salesforce
+                            resource is critical.).
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-two-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Digital Project Management Methodology</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            There are various types of Digital Projects. Which Project Management Methodology to
+                            choose? It depends on various aspects. Since then, there should be a Project
+                            Management Methodology decision mechanism.
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+            <div>
+                <div style="border-right:1px dashed black; float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-three-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>An interim solution for Digital Project Management Methodology Selection</b>
+                        </div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            As per there is no Digital Project Management Methodology Decision Mechanism in
+                            place at the moment.
+                            An interim solution is: before the project kick off, align with project team for
+                            which Project Management Methodology will be used for this project.
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-four-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Define Procurement Role for Digital Projects</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            A Digital Procurement Lead will need to have both hardware and software knowledge so
+                            that he/she could make decision during the vendor evalustion and selection process.
+                            IF there is already a role in place, THEN he/she could be involed in digital project
+                            procuremnt process.
+                            ELSE digtial procurment capability will need to be setup.
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+            <div>
+                <div style="border-right:1px dashed black; float:left; height:208px; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-five-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Vendor Evaluation Matrix</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            There is a Vendor Evaluation Matrix in IRPDP Templates. It could be a reference to
+                            create a Digital Vendor Evaluation Matrix.
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-six-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>IT Support for Digital Projects</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            IT support will be needed from the following aspects in a Digital Project:
+                            <ul>
+                                <li>(1) Infra</li>
+                                <li>(2) Security</li>
+                                <li>(3) System Integaraion</li>
+                                <li>(4) User Account Management</li>
+                                <li>(5) System Landscape</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+            <div>
+                <div style="border-right:1px dashed black; float:left; height:100px; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-seven-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>DevOps Resource</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            DevOps resource under Engineering.
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-eight-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Agile Roles need to be filled in.</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            As per the coming needs of Digital Growth, the current Digtial Organization may need
+                            to have more Agile Roles to be filled in.
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+            <div>
+                <div style="border-right:1px dashed black; float:left; width:495px;">
+                    <div>
+                        <div style="float:left;"><img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-nine-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Digital Project Gate Review Stakeholders</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            Currently, Digital Project Gate Review Stakeholders are Flora and Lily. It depends
+                            on projects. More stakeholders can be added later.
+                        </div>
+                    </div>
+                </div>
+                <div style="float:left; width:495px;">
+                    <div>
+                        <div style="float:left;">
+                            <img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" />
+                            <img height="30px" width="30px"
+                                src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-zero-fill-128.png" />
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;">
+                        <div><b>Digital Project Management Process</b></div>
+                    </div>
+                    <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                        <div>
+                            Due to time constraints, we only talked a little bit about this topic. We can go
+                            into details in the next workshop.
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+        </td>
+    </tr>
+    <tr>
+        <th>Not Discussed Points</th>
+    </tr>
+    <tr>
+        <td>
+            More topics will be discussed in the next workshops.
+        </td>
+    </tr>
+    <tr>
+        <th>Next Steps</th>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td
+                        style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">
+                        Assgin To</td>
+                    <td
+                        style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                        Description</td>
+                    <td
+                        style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                        Due Date</td>
+                    <td
+                        style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">
+                        Raised By</td>
+                    <td
+                        style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                        Status</td>
+                </tr>
+                <tr>
+                    <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                        <div style="float:left;">
+                            <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                <img src="https://www.sap.com/content/dam/application/shared/icons/default-avatar.png"
+                                    style="border-radius:50%;height:50px;width:50px;" />
+                            </div>
+                            <div class="divEmployeeName">Xu, Owen</div>
+                        </div>
+                    </td>
+                    <td style="border-right: 1px dashed gray;">
+                        To orgnazie the next Digital Discussion Workshop.
+                    </td>
+                    <td style="border-right: 1px dashed gray;text-align:center;">
+                        <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                            <span class="weekday">Friday</span>
+                            <span class="day">21</span>
+                            <span class="month">April</span>
+                            <span class="year">2023</span>
+                        </time>
+                    </td>
+                    <td style="border-right: 1px dashed gray;text-align:center;">Workshop Team</td>
+                    <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <th>Timeline</th>
+    </tr>
+    <tr>
+        <td>
+            <div style="margin:0 auto;width:800px;">
+                <div class="Timeline">
+                    <svg height="5" width="200">
+                        <line x1="0" y1="0" x2="200" y2="0" style="stroke:#004165;stroke-width:5" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                    <div class="event1">
+                        <div class="event1Bubble">
+                            <div class="eventTime">
+                                <div class="DayDigit">10</div>
+                                <div class="Day">
+                                    Monday
+                                    <div class="MonthYear">April 2023</div>
+                                </div>
+                            </div>
+                            <div class="eventTitle">prepare</div>
+                        </div>
+                        <div class="eventAuthor">by IR Digital Team</div>
+                        <svg height="20" width="20">
+                            <circle cx="10" cy="11" r="5" fill="#004165" />
+                        </svg>
+                        <div class="time">00:00 AM</div>
+                    </div>
+                    <svg height="5" width="300">
+                        <line x1="0" y1="0" x2="300" y2="0" style="stroke:#004165;stroke-width:5" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                    <div class="event2">
+                        <div class="event2Bubble">
+                            <div class="eventTime">
+                                <div class="DayDigit">20</div>
+                                <div class="Day">
+                                    Thursday
+                                    <div class="MonthYear">April 2023</div>
+                                </div>
+                            </div>
+                            <div class="eventTitle">1st workshop</div>
+                        </div>
+                        <div class="event2Author">by IR Digital Team</div>
+                        <svg height="20" width="20">
+                            <circle cx="10" cy="11" r="5" fill="#004165" />
+                        </svg>
+                        <div class="time2">14:00 PM</div>
+                    </div>
+                    <svg height="5" width="50">
+                        <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                    <div class="now">
+                        NOW
+                    </div>
+                    <svg height="5" width="150">
+                        <line x1="0" y1="0" x2="150" y2="0" style="stroke:rgba(162, 164, 163, 0.37);stroke-width:5" />
+                        Sorry, your browser does not support inline SVG.
+                    </svg>
+                    <div class="event3 futureGray ">
+                        <div class="event1Bubble futureOpacity">
+                            <div class="eventTime">
+                                <div class="DayDigit">28</div>
+                                <div class="Day">
+                                    Friday
+                                    <div class="MonthYear">April 2023</div>
+                                </div>
+                            </div>
+                            <div class="eventTitle">2nd workshop</div>
+                        </div>
+                        <svg height="20" width="20">
+                            <circle cx="10" cy="11" r="5" fill="rgba(162, 164, 163, 0.37)" />
+                        </svg>
+                    </div>
+                    <svg height="5" width="50">
+                        <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                    </svg>
+                    <svg height="20" width="42">
+                        <line x1="1" y1="0" x2="1" y2="20" style="stroke:#004165;stroke-width:2" />
+                        <circle cx="11" cy="10" r="3" fill="#004165" />
+                        <circle cx="21" cy="10" r="3" fill="#004165" />
+                        <circle cx="31" cy="10" r="3" fill="#004165" />
+                        <line x1="41" y1="0" x2="41" y2="20" style="stroke:#004165;stroke-width:2" />
+                    </svg>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </table>
+    </div>
+</body>
+
+</html>
