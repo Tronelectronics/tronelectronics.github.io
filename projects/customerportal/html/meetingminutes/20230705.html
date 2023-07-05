@@ -1,0 +1,915 @@
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../css/calendarstyledatedisplay.css">
+    <link rel="stylesheet" href="../../css/timelinehorizontal.css">
+    <link rel="stylesheet" href="../../css/table.css">
+    <style>
+        .av6-pipS {
+            flex: 1 0 242px;
+            max-width: 242px;
+        }
+
+        .container-1 {
+            box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+            border-radius: 6px;
+            border: 1px solid rgb(234, 234, 234);
+            width: 242px;
+        }
+
+        .container-2 {
+            height: 90px;
+            padding: 10px;
+            border-bottom: 1px solid rgb(243, 242, 241);
+            position: relative;
+            background: rgb(255, 255, 255);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box !important;
+        }
+
+        .details {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-height: 79px;
+            margin-left: 12px;
+            justify-content: center;
+            align-self: end;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image {
+            display: block;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image {
+            /* font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif; */
+            /* -webkit-font-smoothing: antialiased; */
+            /* font-size: 14px; */
+            /* font-weight: 400; */
+            overflow: hidden;
+            /* position: absolute; */
+            /* margin-right: 10px; */
+            /* top: 0px; */
+            /* left: 0px; */
+            width: 48px;
+            height: 48px;
+            /* border: 0px; */
+            border-radius: 50%;
+            /* perspective: 1px; */
+        }
+
+        .imageArea {
+            position: relative;
+            text-align: center;
+            flex: 0 0 auto;
+            height: 48px;
+            width: 48px;
+        }
+
+        .initials {
+            border-radius: 50%;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 48px;
+            height: 48px;
+        }
+
+        .personaInfo {
+            align-items: start;
+            display: flex;
+            margin-bottom: auto;
+        }
+
+        .personaPhoto {
+            width: fit-content;
+            height: fit-content;
+            flex-shrink: 0;
+            border-radius: 50%;
+            font-size: 28px;
+        }
+
+        .primaryText {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 17px;
+            font-weight: 600;
+            color: rgb(37, 36, 35);
+            line-height: 27px;
+            margin: 0px 0px 2px;
+            max-width: 176px;
+            cursor: text;
+        }
+
+        .subtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 19px;
+            color: rgb(37, 36, 35);
+            font-size: 12px;
+        }
+
+        .divEmployeeName {
+            width: 100px;
+            background-color: gray;
+            border-radius: 25px;
+            color: white;
+            float: left;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+            /* 老的 Firefox */
+        }
+
+        .divStatus {
+            width: 120px;
+            border-radius: 25px;
+            color: white;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:1000px;">
+        <table class="bordered">
+            <tr>
+                <td style="font-weight:bold;text-align:center;">Meeting Minutes</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Title</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Customer Portal 2.0 Phase I Project Weekly Meeting</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Attendees</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Chen, Dong">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Chen, Dong"
+                                                title="Profile picture of Chen, Dong">
+                                                <div class="ms-Persona ms-Persona--size72 root-560">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-515">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Image ms-Persona-image image"
+                                                                style="width: 48px; height: 48px;"><img
+                                                                    class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                    src="../../persona/Chen, Dong.jfif"
+                                                                    alt="Profile picture of Chen, Dong"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Chen, Dong</h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="IT Manager">IT
+                                                    Manager</div>
+                                                <div class="subtitle" data-log-name="Department"
+                                                    title="IT - Service &amp; Support">IT - Service &amp; Support</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Huang, Eric">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Huang, Eric"
+                                                title="Profile picture of Huang, Eric">
+                                                <div class="ms-Persona ms-Persona--size72 root-574">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-581">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(73, 130, 5);">
+                                                                <span>HE</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Huang, Eric</h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="IT">IT</div>
+                                                <div class="subtitle" data-log-name="Department"
+                                                    title="IT - Service &amp; Support">IT - Service &amp; Support</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Jin, Charlie">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Jin, Charlie"
+                                                title="Profile picture of Jin, Charlie">
+                                                <div class="ms-Persona ms-Persona--size72 root-560">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-515">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Image ms-Persona-image image"
+                                                                style="width: 48px; height: 48px;"><img
+                                                                    class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                    src="../../persona/Jin, Charlie.jfif"
+                                                                    alt="Profile picture of Jin, Charlie"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Jin, Charlie
+                                                </h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="ADP">ADP</div>
+                                                <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                    Marketing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Jing, Rex">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Jing, Rex"
+                                                title="Profile picture of Jing, Rex">
+                                                <div class="ms-Persona ms-Persona--size72 root-616">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-518">
+                                                        <div role="presentation"
+                                                            class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Image ms-Persona-image image"
+                                                                style="width: 48px; height: 48px;"><img
+                                                                    class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                    src="../../persona/Jing, Rex.jfif"
+                                                                    alt="Profile picture of Jing, Rex"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Jing, Rex</h1>
+                                                <div class="subtitle" data-log-name="JobTitle"
+                                                    title="IT Project Manager">IT Project Manager</div>
+                                                <div class="subtitle-628" data-log-name="Department"
+                                                    title="IT - Service &amp; Support">IT - Service &amp; Support</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <aside class="container-1" aria-label="Profile Card for Qian, Colin">
+                            <div class="container-2">
+                                <div class="personaInfo">
+                                    <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                        aria-label="Profile picture of Qian, Colin"
+                                        title="Profile picture of Qian, Colin">
+                                        <div class="ms-Persona ms-Persona--size72 root-495">
+                                            <div role="presentation"
+                                                class="ms-Persona-coin ms-Persona--size72 coin-502">
+                                                <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                    <div class="ms-Image ms-Persona-image image"
+                                                        style="width: 48px; height: 48px;">
+                                                        <img class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                            src="../../persona/Qian, Colin.jfif"
+                                                            alt="Profile picture of Qian, Colin">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="presentation" class="details">
+                                        <h1 data-log-name="DisplayName" class="primaryText" title="Qian, Colin">
+                                            Qian, Colin
+                                        </h1>
+                                        <div class="subtitle" data-log-name="JobTitle" title="IoT Engineering Manager">
+                                            IoT Engineering Manager
+                                        </div>
+                                        <div class="subtitle" data-log-name="Department"
+                                            title="Electrical &amp; Control">Electrical &amp; Control</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Xu, Owen">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Xu, Owen"
+                                                title="Profile picture of Xu, Owen">
+                                                <div class="ms-Persona ms-Persona--size72 root-430">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-437">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(209, 52, 56);">
+                                                                <span>XO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Xu, Owen">
+                                                    Xu,
+                                                    Owen
+                                                </h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="Project Manager">
+                                                    Project Manager
+                                                </div>
+                                                <div class="subtitle" data-log-name="Department" title="PMO">
+                                                    PMO
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <div>By</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="float:left;">
+                        <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                            <img src="https://www.sap.com/content/dam/application/shared/icons/default-avatar.png"
+                                style="border-radius:50%;height:50px;width:50px;" />
+                        </div>
+                        <div class="divEmployeeName">Xu, Owen</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Date</div>
+                </th>
+            </tr>
+            <tr>
+                <td>2023-07-05 14:00 ~ 2023-06-28 15:00 / Wednesday, Jul 05, 2023 14:00 PM-15:00 PM</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Location</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Microsoft Teams</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Project</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Customer Portal 2.0 Phase I</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Phase</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Explore & Realize</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Stage</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Development</td>
+            </tr>
+            <tr>
+                <th>Documents</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <div style="float:left;height:33px;width:33px;"><img
+                                src="https://spoprod-a.akamaihd.net/files/fabric/assets/item-types/32/docx.svg"></div>
+                        <div style="float:left;">
+                            <div style="height:11px;"></div>
+                            <div style="height:11px;">WeChat MiniApp Publish Process.docx</div>
+                            <div style="height:11px;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div>
+                        <div style="float:left;height:33px;width:33px;"><img
+                                src="https://spoprod-a.akamaihd.net/files/fabric/assets/item-types/32/mpp.svg"></div>
+                        <div style="float:left;">
+                            <div style="height:11px;"></div>
+                            <div style="height:11px;">Customer Portal 2.0 Phase I Project Plan.mpp</div>
+                            <div style="height:11px;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div>
+                        <div style="float:left;height:33px;width:33px;"><img
+                                src="https://spoprod-a.akamaihd.net/files/fabric/assets/item-types/32/xlsx.svg"></div>
+                        <div style="float:left;">
+                            <div style="height:11px;"></div>
+                            <div style="height:11px;">AWS Resourse List.xlsx</div>
+                            <div style="height:11px;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>What project team reaching an agreement during this meeting</th>
+            </tr>
+            <tr>
+                <td>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Project Progress Update</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>Project Team went through Agile Kanban to review Development progress and status.</li>
+                                        <li>TAMO UI Design Team is collabrating with NY Frontend Team. Frontend Team WeChat MiniApp development is starting from today.</li>
+                                        <li>IOT Interface Logic Design and Documentation is on track. IR Team and NY Team will review together on 2023-07-07.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-two-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Test Env & Prod Env AWS</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            AWS Account
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Decide to use current AWS account, and to create Subaccount and use IAM to manage Quota and Usage.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 1</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            AWS Resource
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Check if Resources are reasonable or not.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 2</div>
+                                                <div style="clear:both;"></div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Check if it is possible to install Relational Database (MySQL) on EC2 rather than use RDS.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 3</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-three-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Prod Env WeChat Enterprise Service Account & WeChat MiniApp Account</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Apply
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Apply for WeChat Enterprise Service Account.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 4</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            Filing
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Filing for WeChat Enterprise Service Account.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 4</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-four-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Training Env</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Project Team agreed to use Test(UAT) Env as Training Env.</div>
+                                                <div class="divStatus" style="background-color: #fdab3d; float: left;">See Action 5</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-five-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>WeChat MiniApp Pulish Process</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Project Team went through WeChat MiniApp Pulish Process.</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-six-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Gate Review PPT</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <div>
+                                                <div style="float: left; height: 30px; padding-top: 5px;">Project Team went through Gate Review PPT.</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                No.
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">
+                                Assgin To
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                Description
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Due Date
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">
+                                Raised By
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Status
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img height="30px" width="30px" src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" /></td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../persona/Qian, Colin.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Qian, Colin</div>
+                                </div>
+                            </td>
+                            <td style="border-right: 1px dashed gray;">
+                                To consult with AWS Expert and also confirm with Feng, Jacky to verify if it is possible from technical point of view.
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">06</span>
+                                    <span class="month">Jul</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><img height="30px" width="30px" src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-two-fill-128.png" /></td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../persona/Xu, Owen.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Xu, Owen</div>
+                                </div>
+                            </td>
+                            <td style="border-right: 1px dashed gray;">
+                                To organize a meeting with NY Team and Feng, Jacky to check if the Spec of AWS Resources are reasonable or not.
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">07</span>
+                                    <span class="month">Jul</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><img height="30px" width="30px" src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-three-fill-128.png" /></td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../persona/Xu, Owen.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Xu, Owen</div>
+                                </div>
+                            </td>
+                            <td style="border-right: 1px dashed gray;">
+                                To check with NY Team if it is possible to install Relational Database (MySQL) on EC2 rather than use RDS.
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">07</span>
+                                    <span class="month">Jul</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><img height="30px" width="30px" src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-four-fill-128.png" /></td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../persona/Xu, Owen.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Xu, Owen</div>
+                                </div>
+                            </td>
+                            <td style="border-right: 1px dashed gray;">
+                                Align with Luo, June for Apply and Filing for WeChat Enterprise Service Account.
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">07</span>
+                                    <span class="month">Jul</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td><img height="30px" width="30px" src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-five-fill-128.png" /></td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="https://www.sap.com/content/dam/application/shared/icons/default-avatar.png"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">NY Team</div>
+                                </div>
+                            </td>
+                            <td style="border-right: 1px dashed gray;">
+                                To prepare Training Env Data.
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">14</span>
+                                    <span class="month">Jul</span>
+                                    <span class="year">2023</span>
+                                </time>
+                            </td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-right: 1px dashed gray;text-align:center;">In Progress</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Timeline</th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="margin:0 auto;width:800px;">
+                        <div class="Timeline">
+                            <svg height="5" width="200">
+                                <line x1="0" y1="0" x2="200" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event1">
+                                <div class="event1Bubble">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">19</div>
+                                        <div class="Day">
+                                            Wednesday
+                                            <div class="MonthYear">April 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">kick off</div>
+                                </div>
+                                <div class="eventAuthor">by Project Team</div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="#004165" />
+                                </svg>
+                                <div class="time">00:00 AM</div>
+                            </div>
+                            <svg height="5" width="300">
+                                <line x1="0" y1="0" x2="300" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event2">
+                                <div class="event2Bubble">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">03</div>
+                                        <div class="Day">
+                                            Monday
+                                            <div class="MonthYear">Jul 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">dev start</div>
+                                </div>
+                                <div class="event2Author">by Project Team</div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="#004165" />
+                                </svg>
+                                <div class="time2">09:00 PM</div>
+                            </div>
+                            <svg height="5" width="50">
+                                <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="now">
+                                NOW
+                            </div>
+                            <svg height="5" width="150">
+                                <line x1="0" y1="0" x2="150" y2="0"
+                                    style="stroke:rgba(162, 164, 163, 0.37);stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event3 futureGray ">
+                                <div class="event1Bubble futureOpacity">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">12</div>
+                                        <div class="Day">
+                                            Wednesday
+                                            <div class="MonthYear">July 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">gate review</div>
+                                </div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="rgba(162, 164, 163, 0.37)" />
+                                </svg>
+                            </div>
+                            <svg height="5" width="50">
+                                <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                            </svg>
+                            <svg height="20" width="42">
+                                <line x1="1" y1="0" x2="1" y2="20" style="stroke:#004165;stroke-width:2" />
+                                <circle cx="11" cy="10" r="3" fill="#004165" />
+                                <circle cx="21" cy="10" r="3" fill="#004165" />
+                                <circle cx="31" cy="10" r="3" fill="#004165" />
+                                <line x1="41" y1="0" x2="41" y2="20" style="stroke:#004165;stroke-width:2" />
+                            </svg>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
