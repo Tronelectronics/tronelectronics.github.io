@@ -3,7 +3,7 @@
         "no":"1",
         "date":"2023-01-01",
         "name":"Name A",
-        ";ocation":"Shanghai",
+        "location":"Shanghai",
         "amount":"100",
         "remark":"Remark A"
     },
