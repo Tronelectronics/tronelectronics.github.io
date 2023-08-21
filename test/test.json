@@ -1,18 +1,18 @@
 [
     {
-        "No": "1",
-        "Date": "2023-01-01",
-        "Name": "Name A",
-        "Location": "Shanghai",
-        "Amount": "100",
-        "Remark": "Remark A"
+        "no":"1",
+        "date":"2023-01-01",
+        "name":"Name A",
+        ";ocation":"Shanghai",
+        "amount":"100",
+        "remark":"Remark A"
     },
     {
-        "No": "2",
-        "Date": "2023-12-31",
-        "Name": "Name B",
-        "Location": "Shanghai",
-        "Amount": "1000",
-        "Remark": "Remark B"
+        "no":"2",
+        "date":"2023-12-31",
+        "name":"Name B",
+        "location":"Shanghai",
+        "amount":"1000",
+        "remark":"Remark B"
     }
 ]
