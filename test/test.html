@@ -16,25 +16,25 @@
                 dataType: "json",
                 success: function (data) {
                     var html = '<tr>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'No.' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:70px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Date' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Time' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:40px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Name' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Location' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Amount' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
                         'Invoice' +
                         '</td>' +
                         '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
@@ -53,7 +53,7 @@
                         html += "<td>" + item.remark + "</td>";
                         html += "</tr>";
                     });
-                    html += '<tr><td colspan="6"></td></tr>';
+                    html += '<tr><td colspan="8"></td></tr>';
                     $("#table").html(html);
                 },
                 error: function (xhr, status, error) {
@@ -65,7 +65,7 @@
 </head>
 
 <body>
-    <div style="margin:0 auto;width:1000px;">
+    <div style="margin:0 auto;width:1100px;">
         <table class="bordered">
 
             <tr>
