@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/table.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    
+    <style>
+
+    </style>
+
+    <script type="text/javascript" language="javascript">
+        $().ready(function (e) {
+            $.ajax({
+                url: "https://tronelectronics.github.io/test/test.json",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var html = '<tr>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">' +
+                        'No.' +
+                        '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Date' +
+                        '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Name' +
+                        '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        'Location' +
+                        '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Amount' +
+                        '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
+                        'Remark' +
+                        '</td>' +
+                        '</tr>';
+                    $.each(data, function (i, item) {
+                        html += "<tr>";
+                        html += "<td>" + item.no + "</td>";
+                        html += "<td>" + item.date + "</td>";
+                        html += "<td>" + item.name + "</td>";
+                        html += "<td>" + item.location + "</td>";
+                        html += "<td>" + item.amount + "</td>";
+                        html += "<td>" + item.remark + "</td>";
+                        html += "</tr>";
+                    });
+                    html += '<tr><td colspan="6"></td></tr>';
+                    $("#table").html(html);
+                },
+                error: function (xhr, status, error) {
+                    alert(status);
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:1000px;">
+        <table class="bordered">
+
+            <tr>
+                <th>List</th>
+            </tr>
+            <tr>
+                <td>
+                    <table id="table">
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
