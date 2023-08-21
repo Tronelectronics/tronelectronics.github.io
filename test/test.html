@@ -22,6 +22,9 @@
                         '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:70px;">' +
                         'Date' +
                         '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">' +
+                        'Time' +
+                        '</td>' +
                         '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:40px;">' +
                         'Name' +
                         '</td>' +
@@ -31,6 +34,9 @@
                         '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">' +
                         'Amount' +
                         '</td>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        'Invoice' +
+                        '</td>' +
                         '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
                         'Remark' +
                         '</td>' +
@@ -39,9 +45,11 @@
                         html += "<tr>";
                         html += "<td>" + item.no + "</td>";
                         html += "<td>" + item.date + "</td>";
+                        html += "<td>" + item.time+ "</td>";
                         html += "<td>" + item.name + "</td>";
                         html += "<td>" + item.location + "</td>";
                         html += "<td>" + item.amount + "</td>";
+                        html += "<td>" + item.invoice+ "</td>";
                         html += "<td>" + item.remark + "</td>";
                         html += "</tr>";
                     });
