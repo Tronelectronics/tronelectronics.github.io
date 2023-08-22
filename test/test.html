@@ -15,32 +15,34 @@
                 type: "GET",
                 dataType: "json",
                 success: function (data) {
-                    var html = '<tr>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">' +
+                    var html =
+                        '<tr>' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'No.' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Date' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Time' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Name' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Location' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Amount' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Invoice' +
                         '</td>' +
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
                         'Remark' +
                         '</td>' +
                         '</tr>';
+                    
                     $.each(data, function (i, item) {
                         html += "<tr>";
                         html += "<td>" + item.no + "</td>";
@@ -53,7 +55,9 @@
                         html += "<td>" + item.remark + "</td>";
                         html += "</tr>";
                     });
+                    
                     html += '<tr><td colspan="8"></td></tr>';
+                    
                     $("#table").html(html);
                 },
                 error: function (xhr, status, error) {
