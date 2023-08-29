@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn").on("click", function () {
+                alert();
+                $("#video").html("<source src='" + $("#url").val() + "' type='application/x-mpegURL'>");
+                var ply = videojs("video");
+                ply.play();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="url" style="width:100%"
+        value="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8">
+    <input type="button" id="btn" value="play">
+
+    <br><br>
+
+    <video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" controls width="640"
+        height="268" controls>
+    </video>
+</body>
+
+</html>
