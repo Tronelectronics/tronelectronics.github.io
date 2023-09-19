@@ -1076,7 +1076,9 @@
             }) 
 
             function loadData(year){
-                var value = "https://tronelectronics.github.io/test/"+ year +".json"
+                
+                var value = "https://tronelectronics.github.io/test/"+ year +".json";
+
                 $.ajax({
                     url: value,
                     type: "GET",
