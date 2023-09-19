@@ -733,7 +733,7 @@
 
                                                     <section id="flip-scroll">
 
-                                                        <table class="table table-bordered table-striped cf">
+                                                        <table id="table" class="table table-bordered table-striped cf">
                                                             <thead class="cf">
                                                                 <tr>
                                                                     <th>Code</th>
@@ -1050,6 +1050,50 @@
         <script type="text/javascript" src="assets/js/load.js"></script>
         <script type="text/javascript" src="assets/js/main.js"></script>
 
+        <script type="text/javascript" language="javascript">
+            $().ready(function (e) {
+                $.ajax({
+                    url: "https://tronelectronics.github.io/test/test.json",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        var html =
+                            '<thead class="cf">' +
+                            '<tr>' +
+                            '<th>No.</th>' +
+                            '<th>Date</th>' +
+                            '<th>Time</th>' +
+                            '<th>Name</th>' +
+                            '<th>Location</th>' +
+                            '<th>Amount</th>' +
+                            '<th>Invoice</th>' +
+                            '<th>Remark</th>' +
+                            '</tr>' +
+                            '</thead>';
+
+                        $.each(data, function (i, item) {
+                            html += "<tbody>";
+                            html += "<tr>";
+                            html += "<td>" + item.no + "</td>";
+                            html += "<td>" + item.date + "</td>";
+                            html += "<td>" + item.time + "</td>";
+                            html += "<td>" + item.name + "</td>";
+                            html += "<td>" + item.location + "</td>";
+                            html += "<td>" + item.amount + "</td>";
+                            html += "<td>" + item.invoice + "</td>";
+                            html += "<td>" + item.remark + "</td>";
+                            html += "</tr>";
+                            html += "</tbody>";
+                        });
+
+                        $("#table").html(html);
+                    },
+                    error: function (xhr, status, error) {
+                        alert(status);
+                    }
+                })
+            });
+        </script>
 
     </div>
 </body>
