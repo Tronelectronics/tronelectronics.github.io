@@ -706,7 +706,7 @@
 
                                 Content Goes Here
 
-                                <select>
+                                <select id="selectYear">
                                     <option value="2023">2023</option>
                                     <option value="2022">2022</option>
                                     <option value="2021">2021</option>
@@ -1067,8 +1067,18 @@
 
         <script type="text/javascript" language="javascript">
             $().ready(function (e) {
+                
+            });
+
+            $('selectYear').on('change', function() { 
+                var year = this.value;
+                loadData(year);
+            }) 
+
+            function loadData(year){
+                var value = "https://tronelectronics.github.io/test/"+ year +".json"
                 $.ajax({
-                    url: "https://tronelectronics.github.io/test/test.json",
+                    url: value,
                     type: "GET",
                     dataType: "json",
                     success: function (data) {
@@ -1107,7 +1117,7 @@
                         alert(status);
                     }
                 })
-            });
+            }
         </script>
 
     </div>
