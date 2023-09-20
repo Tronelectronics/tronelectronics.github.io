@@ -11,12 +11,12 @@
     <script type="text/javascript" language="javascript">
         $().ready(function (e) {
             loadData(2023);
-        });
 
-        $('#selectYear').on('change', function () {
-            var year = this.value;
-            loadData(year);
-        })
+            $('#selectYear').on('change', function () {
+                var year = this.value;
+                loadData(year);
+            })
+        });
 
         function loadData(year) {
 
