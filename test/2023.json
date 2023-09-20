@@ -6,6 +6,7 @@
         "name":"朱宁宁",
         "location":"世纪汇星巴克",
         "amount":"30",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩自己买好了1杯 我自己买了1杯中杯热巧克力30元 一共30元"
     },
@@ -16,6 +17,7 @@
         "name":"李涛",
         "location":"美罗城星巴克",
         "amount":"60",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"1杯中杯热卡布奇诺30元 1杯中杯热拿铁30元 一共60元"
     },
@@ -26,6 +28,7 @@
         "name":"励小姐",
         "location":"陆家嘴中心广场皮爷咖啡",
         "amount":"73",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"1杯抹茶拿铁36元 1杯法芙娜热巧37元 一共73元"
     },
@@ -36,6 +39,7 @@
         "name":"史晓倩",
         "location":"紫荆广场星巴克",
         "amount":"30",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩自己买好了1杯 我自己买了1杯中杯热巧克力30元 一共30元"
     },
@@ -46,6 +50,7 @@
         "name":"莫文迪",
         "location":"白玉兰广场星巴克",
         "amount":"63",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"1杯中杯热香草风味拿铁33元 1杯中杯热经典巧克力30元 一共63元"
     },
@@ -56,6 +61,7 @@
         "name":"陈清月",
         "location":"咖啡节",
         "amount":"76",
+        "method":"微信",
         "invoice":"没有小票",
         "remark":"2杯咖啡 一共76元 女孩付的 回来后我微信转账76元给女孩"
     },
@@ -66,6 +72,7 @@
         "name":"王琰",
         "location":"大宁久光皮爷咖啡",
         "amount":"36",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩1杯焦糖玛奇朵36元 一共36元"
     },
@@ -76,6 +83,7 @@
         "name":"周蓓蕾",
         "location":"地铁1号线莲花路站lalastation Tims",
         "amount":"26",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩1杯大热美式26元 一共26元"
     },
@@ -86,6 +94,7 @@
         "name":"沈川",
         "location":"静安大悦城星巴克",
         "amount":"29",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩1杯大冰摇柠檬茶29元 一共29元"
     },
@@ -96,6 +105,7 @@
         "name":"杭怡君",
         "location":"奶茶店",
         "amount":"25",
+        "method":"微信",
         "invoice":"没有小票",
         "remark":"我1杯百香果"
     },
@@ -106,6 +116,7 @@
         "name":"姚茜",
         "location":"大宁国际避风塘",
         "amount":"37",
+        "method":"微信",
         "invoice":"没有小票  有1张上菜单",
         "remark":"1杯避风塘招牌港式热奶茶 1杯避风塘热珍珠奶茶"
     },
@@ -116,6 +127,7 @@
         "name":"郑心",
         "location":"虹口龙之梦awfully chocolate",
         "amount":"72",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"女孩1杯招牌白巧克力36元 我1杯招牌黑巧克力26元 一共72元"
     },
@@ -126,6 +138,7 @@
         "name":"LL",
         "location":"世纪汇地理学家咖啡",
         "amount":"100",
+        "method":"微信",
         "invoice":"没有小票  我微信扫码支付的 在百度云盘里",
         "remark":"一共100元"
     },
@@ -136,6 +149,7 @@
         "name":"LL",
         "location":"奇利斯陆家嘴滨江店",
         "amount":"302",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"大佬汉堡88 烤虾沙拉78 脆炸鱿鱼58 熔岩蛋糕78 一共302元"
     },
@@ -146,6 +160,7 @@
         "name":"LL",
         "location":"人民广场来福士果泰",
         "amount":"154",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"一共154元"
     },
@@ -156,6 +171,7 @@
         "name":"LL",
         "location":"国金中心Lunars",
         "amount":"269",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"一共269元"
     },
@@ -166,6 +182,7 @@
         "name":"LL",
         "location":"国金中心电影院",
         "amount":"130.8",
+        "method":"微信",
         "invoice":"电影票在",
         "remark":"一共130.8元"
     },
@@ -176,6 +193,7 @@
         "name":"罗朝辉妈妈介绍郭小姐",
         "location":"世博源seesaw",
         "amount":"59",
+        "method":"微信",
         "invoice":"没有小票  我微信扫码支付的 在百度云盘里",
         "remark":"一共59元"
     },
@@ -186,6 +204,7 @@
         "name":"LL",
         "location":"新天地 IL TEATRO 精品意大利餐厅",
         "amount":"191",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"一共191元"
     },
@@ -196,6 +215,7 @@
         "name":"LL",
         "location":"西岸AI PLAZA ZAKUAZAKU&FOOM",
         "amount":"37.90",
+        "method":"微信",
         "invoice":"LL没拿小票 LL手机大众点评买的",
         "remark":"1个原味泡芙 1个椰子泡芙 一共37.90元"
     },
@@ -206,6 +226,7 @@
         "name":"LL",
         "location":"陆家嘴中心L+MALL 柴门饭儿",
         "amount":"282",
+        "method":"微信",
         "invoice":"小票拿了",
         "remark":"一共282元"
     },
@@ -216,6 +237,7 @@
         "name":"LL",
         "location":"世纪汇失重餐厅",
         "amount":"353",
+        "method":"微信",
         "invoice":"没有小票 LL手机扫码付的 我拍了餐厅iPad的点餐结账单",
         "remark":"一共353元"
     },
@@ -226,6 +248,7 @@
         "name":"寿青莹",
         "location":"大宁久光 星巴克",
         "amount":"0",
+        "method":"微信",
         "invoice":"没有买任何东西",
         "remark":"我说给女孩买咖啡和蛋糕 说了几次 女孩说不要 女孩1杯水 我1杯水 一共0元"
     },
@@ -236,6 +259,7 @@
         "name":"张艳",
         "location":"静安嘉里中心 wagas",
         "amount":"48",
+        "method":"微信",
         "invoice":"没有小票  我微信扫码支付的 在百度云盘里",
         "remark":"女孩1杯拿铁24元 我1杯澳式咖啡24元 一共48元"
     }
