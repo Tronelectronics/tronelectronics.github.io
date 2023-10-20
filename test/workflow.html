@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+<head>
+  
+</head>
+
+<body>
+  <svg width="800" height="300"></svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://www.cssscript.com/demo/svg-flowchart-d3-flowcharty/lib/flowcharty.js"></script>
+  <script>
+    var data = {
+      nodes: [
+
+        {
+          id: 'Start',
+          label: { name: 'Start' },
+          style: { shape: "circle", rx: 10, ry: 10, fillColor: '#60A917', strokeColor: '#2D7600' }
+        },
+
+        {
+          id: 'Step1',
+          label: { name: 'RFQ.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step2',
+          label: { name: 'Get Quote.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step3',
+          label: { name: 'Expense Application.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step4',
+          label: { name: 'Oracle R12 PR.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step5',
+          label: { name: 'Contract with vendor.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step6',
+          label: { name: 'Issue PO to vendor.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'Step7',
+          label: { name: 'Vendor on board.', color: '#000', dx: 0, dy: 0, textAnchor: 'middle' },
+          style: { shape: "rect", width: 130, height: 30, rx: 3, ry: 3, fillColor: '#DAE8FC', strokeColor: '#6C8EBF' }
+        },
+
+        {
+          id: 'End',
+          label: { name: 'End' },
+          style: { shape: "circle", rx: 10, ry: 10, fillColor: '#E51400', strokeColor: '#B20000' }
+        },
+      ],
+      map: [
+        ['', 'Start'],
+        ['', 'Step1', 'Step2', 'Step3'],
+        ['', 'Step6', 'Step5', 'Step4'],
+        ['', 'Step7'],
+        ['', 'End'],
+      ],
+      links: [
+        { source: 'Start', target: 'Step1', style: { strokeWidth: 1, color: '#afafaf' } },
+        { source: 'Step1', target: 'Step2', style: { strokeWidth: 1, color: '#afafaf', curveType: 'stepBefore' } },
+        { source: 'Step2', target: 'Step3', style: { strokeWidth: 1, color: '#afafaf', curveType: 'stepBefore' } },
+        { source: 'Step3', target: 'Step4', style: { strokeWidth: 1, color: '#afafaf' } },
+        { source: 'Step4', target: 'Step5', style: { strokeWidth: 1, color: '#afafaf', curveType: 'stepBefore' } },
+        { source: 'Step5', target: 'Step6', style: { strokeWidth: 1, color: '#afafaf' } },
+        { source: 'Step6', target: 'Step7', style: { strokeWidth: 1, color: '#afafaf' } },
+        { source: 'Step7', target: 'End', style: { strokeWidth: 1, color: '#afafaf' } },
+      ]
+    };
+
+    var flowcharty = new Flowcharty.default();
+    flowcharty.nodeRX = 7;
+    flowcharty.nodeRY = 7;
+    flowcharty.nodeFillColor = "#000";
+    flowcharty.render(d3.select("svg"), data);
+  </script>
+</body>
+
+</html>
