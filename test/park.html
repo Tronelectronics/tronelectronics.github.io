@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/table.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+    <style>
+
+    </style>
+
+    <script type="text/javascript" language="javascript">
+        $().ready(function (e) {
+            $.ajax({
+                url: "https://tronelectronics.github.io/test/note.json",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var html =
+                        '<tr>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Id' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'When' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Where' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'NativePlace' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">' +
+                        'Age' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:75px;">' +
+                        'Height' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:75px;">' +
+                        'Weight' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        'Job' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Address' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">' +
+                        'Name' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Mobile' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'WeChat' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'ParentName' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'ParentMobile' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'ParentWeChat' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">' +
+                        'Remark' +
+                        '</td>' +
+
+                        '</tr>';
+
+                    $.each(data, function (i, item) {
+                        html += '<tr>';
+                        html += '<td style="text-align:center;">' + item.Id + '</td>';
+                        html += '<td style="text-align:center;">' + item.When + '</td>';
+                        html += '<td style="text-align:center;">' + item.Where + '</td>';
+                        html += '<td style="text-align:center;">' + item.NativePlace + '</td>';
+                        html += '<td style="text-align:center;">' + item.Age + '</td>';
+                        html += '<td style="text-align:center;">' + item.Height + '</td>';
+                        html += '<td style="text-align:center;">' + item.Weight + '</td>';
+                        html += '<td style="text-align:center;">' + item.Job + '</td>';
+                        html += '<td style="text-align:center;">' + item.Address + '</td>';
+                        html += '<td style="text-align:center;">' + item.Name + '</td>';
+                        html += '<td style="text-align:center;">' + item.Mobile + '</td>';
+                        html += '<td style="text-align:center;">' + item.WeChat + '</td>';
+                        html += '<td style="text-align:center;">' + item.ParentName + '</td>';
+                        html += '<td style="text-align:center;">' + item.ParentMobile + '</td>';
+                        html += '<td style="text-align:center;">' + item.ParentWeChat + '</td>';
+                        html += '<td style="text-align:center;">' + item.Remark + '</td>';
+                        html += '</tr>';
+                    });
+
+                    html += '<tr><td colspan="16"></td></tr>';
+
+                    $("#table").html(html);
+                },
+                error: function (xhr, status, error) {
+                    alert(status);
+                }
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:1800px;">
+        <table class="bordered">
+
+            <tr>
+                <th>List</th>
+            </tr>
+            <tr>
+                <td>
+                    <table id="table">
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
