@@ -34,6 +34,10 @@
                         'Remark' +
                         '</td>' +
 
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">' +
+                        'Status' +
+                        '</td>' +
+
                         '</tr>';
 
                     $.each(data, function (i, item) {
@@ -42,6 +46,7 @@
                         html += '<td style="text-align:center;">' + item.When + '</td>';
                         html += '<td style="text-align:center;">' + item.Where + '</td>';
                         html += '<td style="text-align:center;">' + item.Remark + '</td>';
+                        html += '<td style="text-align:center;">' + item.Status + '</td>';
                         html += '</tr>';
                     });
 
