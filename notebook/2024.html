@@ -10,17 +10,17 @@
 
     <script type="text/javascript" language="javascript">
         $().ready(function (e) {
-            loadData(2024);
+            loadData(202401);
 
-            $('#selectYear').on('change', function () {
-                var year = this.value;
-                loadData(year);
+            $('#selectDate').on('change', function () {
+                var date = this.value;
+                loadData(date);
             })
         });
 
-        function loadData(year) {
+        function loadData(date) {
 
-            var value = "https://tronelectronics.github.io/notebook/" + year + ".json";
+            var value = "https://tronelectronics.github.io/notebook/" + date + ".json";
 
             $.ajax({
                 url: value,
