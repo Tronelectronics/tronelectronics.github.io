@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://tronelectronics.github.io/test/css/table.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
+    <style>
+
+    </style>
+
+    <script type="text/javascript" language="javascript">
+        $().ready(function (e) {
+            loadData(2024);
+
+            $('#selectYear').on('change', function () {
+                var year = this.value;
+                loadData(year);
+            })
+        });
+
+        function loadData(year) {
+
+            var value = "https://tronelectronics.github.io/notebook/" + year + ".json";
+
+            $.ajax({
+                url: value,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    var html =
+                        '<tr>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        'Date' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        'Title' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        'Category' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        'Amount' +
+                        '</td>' +
+
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        'Remark' +
+                        '</td>' +
+
+                        '</tr>';
+
+                    $.each(data, function (i, item) {
+                        html += '<tr>';
+                        html += '<td style="text-align:center;">' + item.Date + '</td>';
+                        html += '<td style="text-align:center;">' + item.Title + '</td>';
+                        if (item.Category == '收入') {
+                            html += '<td style="text-align:center;">' + '<div style="background-color:yellowgreen;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                        }
+                        else if (item.Category == '支出') {
+                            html += '<td style="text-align:center;">' + '<div style="background-color:red;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                        }
+                        else if (item.Category == '总结') {
+                            html += '<td style="text-align:center;">' + '<div style="background-color:silver;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                        }
+                        html += '<td style="text-align:center;">' + item.Amount + '</td>';
+                        html += '<td style="text-align:center;">' + item.Remark + '</td>';
+                        html += '</tr>';
+                    });
+
+                    html += '<tr><td colspan="5"></td></tr>';
+
+                    $("#table").html(html);
+                },
+                error: function (xhr, status, error) {
+                    alert(status);
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:800px;">
+        <select id="selectYear">
+            <option value="202401">2024-01</option>
+            <option value="202402">2024-02</option>
+            <option value="202403">2024-03</option>
+            <option value="202404">2024-04</option>
+            <option value="202405">2024-05</option>
+            <option value="202406">2024-06</option>
+            <option value="202407">2024-07</option>
+            <option value="202408">2024-08</option>
+            <option value="202409">2024-09</option>
+            <option value="202410">2024-10</option>
+            <option value="202411">2024-11</option>
+            <option value="202412">2024-12</option>
+        </select>
+
+        <table class="bordered">
+
+            <tr>
+                <th>List</th>
+            </tr>
+            <tr>
+                <td>
+                    <table id="table">
+
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
