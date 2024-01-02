@@ -5,7 +5,15 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 
     <style>
-
+        .divStatus{
+            width: 100px;
+            border-radius: 25px;
+            color: white;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+        }
     </style>
 
     <script type="text/javascript" language="javascript">
@@ -57,13 +65,13 @@
                         html += '<td style="text-align:center;">' + item.Date + '</td>';
                         html += '<td style="text-align:center;">' + item.Title + '</td>';
                         if (item.Category == '收入') {
-                            html += '<td style="text-align:center;">' + '<div style="background-color:yellowgreen;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                            html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: yellowgreen;">' + item.Category + '</div>' + '</td>';
                         }
                         else if (item.Category == '支出') {
-                            html += '<td style="text-align:center;">' + '<div style="background-color:red;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                            html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: red;">' + item.Category + '</div>' + '</td>';
                         }
                         else if (item.Category == '总结') {
-                            html += '<td style="text-align:center;">' + '<div style="background-color:silver;color:white;padding:5px 5px 5px 5px;">' + item.Category + '</div>' + '</td>';
+                            html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: silver;">' + item.Category + '</div>' + '</td>';
                         }
                         html += '<td style="text-align:center;">' + item.Amount + '</td>';
                         html += '<td style="text-align:center;">' + item.Remark + '</td>';
