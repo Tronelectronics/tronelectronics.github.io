@@ -1,23 +1,93 @@
 [
-  {
-    "Date": "2024年01月01日 周一",
-    "Title": "Demo Title 收入",
-    "Category": "收入",
-    "Amount": "1.00",
-    "Remark": "Demo Remark"
-  },
-  {
-    "Date": "2024年01月01日 周一",
-    "Title": "Demo Title 支出",
-    "Category": "支出",
-    "Amount": "1.00",
-    "Remark": "Demo Remark"
-  },
-  {
-    "Date": "2024年01月01日 周一",
-    "Title": "Demo Title 总结",
-    "Category": "总结",
-    "Amount": "",
-    "Remark": "Demo Remark"
-  }
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "保姆梅阿姨工资",
+        "Category": "支出",
+        "Amount": "6400",
+        "Remark": "2023年12月工资6000元 包括元旦加班400元"
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "五花肉 肉骨头 肉糜",
+        "Category": "支出",
+        "Amount": "250",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "桃酥饼 4盒",
+        "Category": "支出",
+        "Amount": "48",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "大米 1袋",
+        "Category": "支出",
+        "Amount": "58",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "鸡蛋",
+        "Category": "支出",
+        "Amount": "25",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "白糖",
+        "Category": "支出",
+        "Amount": "11",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "盐",
+        "Category": "支出",
+        "Amount": "6",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "生姜",
+        "Category": "支出",
+        "Amount": "3",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "给保姆梅阿姨报销",
+        "Category": "支出",
+        "Amount": "95",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "中午1碗牛肉面",
+        "Category": "支出",
+        "Amount": "21",
+        "Remark": "实际是1碗馄饨15元"
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "帮阿龙挂号配药",
+        "Category": "支出",
+        "Amount": "9.3",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "锦华交通卡充值",
+        "Category": "支出",
+        "Amount": "100",
+        "Remark": ""
+    },
+    {
+        "Date": "2024年01月05日 周五",
+        "Title": "总结",
+        "Category": "总结",
+        "Amount": "",
+        "Remark": "180+48+58+25+11+6+3+95+15+9.3+100=550.3 带去600元 带回来40元 用掉560元"
+    }
 ]
