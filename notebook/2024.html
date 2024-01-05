@@ -38,23 +38,23 @@
                     var html =
                         '<tr>' +
 
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
                         'Date' +
                         '</td>' +
 
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
                         'Title' +
                         '</td>' +
 
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
                         'Category' +
                         '</td>' +
 
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
                         'Amount' +
                         '</td>' +
 
-                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:200px;">' +
+                        '<td style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:300px;">' +
                         'Remark' +
                         '</td>' +
 
@@ -68,7 +68,7 @@
                             html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: yellowgreen;">' + item.Category + '</div>' + '</td>';
                         }
                         else if (item.Category == '支出') {
-                            html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: red;">' + item.Category + '</div>' + '</td>';
+                            html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: orange;">' + item.Category + '</div>' + '</td>';
                         }
                         else if (item.Category == '总结') {
                             html += '<td style="text-align:center;">' + '<div class="divStatus" style="background-color: silver;">' + item.Category + '</div>' + '</td>';
@@ -91,7 +91,7 @@
 </head>
 
 <body>
-    <div style="margin:0 auto;width:800px;">
+    <div style="margin:0 auto;width:1200px;">
         <select id="selectDate">
             <option value="202401">2024-01</option>
             <option value="202402">2024-02</option>
