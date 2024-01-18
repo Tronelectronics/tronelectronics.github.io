@@ -1,0 +1,1262 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../css/calendarstyledatedisplay.css">
+    <link rel="stylesheet" href="../../css/timelinehorizontal.css">
+    <link rel="stylesheet" href="../../css/timelinevertical.css">
+    <link rel="stylesheet" href="../../css/table.css">
+    <style>
+        .av6-pipS {
+            flex: 1 0 242px;
+            max-width: 242px;
+        }
+
+        .container-1 {
+            box-shadow: rgb(0 0 0 / 13%) 0px 1.6px 3.6px 0px, rgb(0 0 0 / 11%) 0px 0.3px 0.9px 0px;
+            border-radius: 6px;
+            border: 1px solid rgb(234, 234, 234);
+            width: 242px;
+        }
+
+        .container-2 {
+            height: 90px;
+            padding: 10px;
+            border-bottom: 1px solid rgb(243, 242, 241);
+            position: relative;
+            background: rgb(255, 255, 255);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box !important;
+        }
+
+        .details {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-height: 79px;
+            margin-left: 12px;
+            justify-content: center;
+            align-self: end;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image {
+            display: block;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image {
+            /* font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif; */
+            /* -webkit-font-smoothing: antialiased; */
+            /* font-size: 14px; */
+            /* font-weight: 400; */
+            overflow: hidden;
+            /* position: absolute; */
+            /* margin-right: 10px; */
+            /* top: 0px; */
+            /* left: 0px; */
+            width: 48px;
+            height: 48px;
+            /* border: 0px; */
+            border-radius: 50%;
+            /* perspective: 1px; */
+        }
+
+        .imageArea {
+            position: relative;
+            text-align: center;
+            flex: 0 0 auto;
+            height: 48px;
+            width: 48px;
+        }
+
+        .initials {
+            border-radius: 50%;
+            color: rgb(255, 255, 255);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 48px;
+            height: 48px;
+        }
+
+        .personaInfo {
+            align-items: start;
+            display: flex;
+            margin-bottom: auto;
+        }
+
+        .personaPhoto {
+            width: fit-content;
+            height: fit-content;
+            flex-shrink: 0;
+            border-radius: 50%;
+            font-size: 28px;
+        }
+
+        .primaryText {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 17px;
+            font-weight: 600;
+            color: rgb(37, 36, 35);
+            line-height: 27px;
+            margin: 0px 0px 2px;
+            max-width: 176px;
+            cursor: text;
+        }
+
+        .subtitle {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 19px;
+            color: rgb(37, 36, 35);
+            font-size: 12px;
+        }
+
+        .divEmployeeName {
+            width: 100px;
+            background-color: gray;
+            border-radius: 25px;
+            color: white;
+            float: left;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+            /* 老的 Firefox */
+        }
+
+        .divStatus {
+            width: 120px;
+            border-radius: 25px;
+            color: white;
+            margin: 1px 1px;
+            padding: 4px 10px;
+            text-align: center;
+            -moz-border-radius: 25px;
+        }
+
+        .hori-timeline .events {
+            border-top: 3px solid #e9ecef;
+        }
+
+        .hori-timeline .events .event-list {
+            display: block;
+            position: relative;
+            text-align: center;
+            padding-top: 70px;
+            margin-right: 0;
+        }
+
+        .hori-timeline .events .event-list:before {
+            content: "";
+            position: absolute;
+            height: 36px;
+            border-right: 2px dashed #dee2e6;
+            top: 0;
+        }
+
+        .hori-timeline .events .event-list .event-date {
+            position: absolute;
+            top: 38px;
+            left: 0;
+            right: 0;
+            width: 75px;
+            margin: 0 auto;
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+
+        @media (min-width: 1140px) {
+            .hori-timeline .events .event-list {
+                display: inline-block;
+                width: 24%;
+                padding-top: 45px;
+            }
+
+            .hori-timeline .events .event-list .event-date {
+                top: -12px;
+            }
+        }
+
+        .bg-soft-primary {
+            background-color: rgba(64, 144, 203, .3) !important;
+        }
+
+        .bg-soft-success {
+            background-color: rgba(71, 189, 154, .3) !important;
+        }
+
+        .bg-soft-danger {
+            background-color: rgba(231, 76, 94, .3) !important;
+        }
+
+        .bg-soft-warning {
+            background-color: rgba(249, 213, 112, .3) !important;
+        }
+
+        .card {
+            border: none;
+            margin-bottom: 24px;
+            -webkit-box-shadow: 0 0 13px 0 rgba(236, 236, 241, .44);
+            box-shadow: 0 0 13px 0 rgba(236, 236, 241, .44);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin:0 auto;width:1000px;">
+        <table class="bordered">
+            <tr>
+                <td style="font-weight:bold;text-align:center;">Meeting Minutes</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Title</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Internal Portal Project Weekly Meeting</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Attendees</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Huang, Eric">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Huang, Eric"
+                                                title="Profile picture of Huang, Eric">
+                                                <div class="ms-Persona ms-Persona--size72 root-574">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-581">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(73, 130, 5);">
+                                                                <span>HE</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Huang, Eric</h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="IT">IT</div>
+                                                <div class="subtitle" data-log-name="Department"
+                                                    title="IT - Service &amp; Support">IT - Service &amp; Support</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Ma, Garfield">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Ma, Garfield"
+                                                title="Profile picture of Ma, Garfield">
+                                                <div class="ms-Persona ms-Persona--size72 root-549">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-464">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Image ms-Persona-image image"
+                                                                style="width: 48px; height: 48px;"><img
+                                                                    class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                                    src="../../persona/Ma, Garfield.jfif"
+                                                                    alt="Profile picture of Ma, Garfield"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText">Ma, Garfield</h1>
+                                                <div class="subtitle" data-log-name="JobTitle"
+                                                    title="Manager, Digital Solution">Product
+                                                    Manager, Digital Solution</div>
+                                                <div class="subtitle" data-log-name="Department" title="Marketing">
+                                                    Marketing</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <aside class="container-1" aria-label="Profile Card for Qian, Colin">
+                            <div class="container-2">
+                                <div class="personaInfo">
+                                    <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                        aria-label="Profile picture of Qian, Colin"
+                                        title="Profile picture of Qian, Colin">
+                                        <div class="ms-Persona ms-Persona--size72 root-495">
+                                            <div role="presentation"
+                                                class="ms-Persona-coin ms-Persona--size72 coin-502">
+                                                <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                    <div class="ms-Image ms-Persona-image image"
+                                                        style="width: 48px; height: 48px;">
+                                                        <img class="ms-Image-image is-loaded ms-Image-image--cover ms-Image-image--portrait is-fadeIn image"
+                                                            src="../../persona/Qian, Colin.jfif"
+                                                            alt="Profile picture of Qian, Colin">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div role="presentation" class="details">
+                                        <h1 data-log-name="DisplayName" class="primaryText" title="Qian, Colin">
+                                            Qian, Colin
+                                        </h1>
+                                        <div class="subtitle" data-log-name="JobTitle" title="IoT Engineering Manager">
+                                            IoT Engineering Manager
+                                        </div>
+                                        <div class="subtitle" data-log-name="Department"
+                                            title="Electrical &amp; Control">Electrical &amp; Control</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Xu, Owen">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Xu, Owen"
+                                                title="Profile picture of Xu, Owen">
+                                                <div class="ms-Persona ms-Persona--size72 root-430">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-437">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: rgb(209, 52, 56);">
+                                                                <span>XO</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Xu, Owen">
+                                                    Xu,
+                                                    Owen
+                                                </h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="Project Manager">
+                                                    Project Manager
+                                                </div>
+                                                <div class="subtitle" data-log-name="Department" title="PMO">
+                                                    PMO
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float:left; margin-right: 5px;">
+                        <div class="av6-pipS">
+                            <div>
+                                <aside class="container-1" aria-label="Profile Card for Zhou, Yueyao">
+                                    <div class="container-2">
+                                        <div class="personaInfo">
+                                            <div class="personaPhoto" data-log-name="HeaderPhoto" role="img"
+                                                aria-label="Profile picture of Zhou, Yueyao"
+                                                title="Profile picture of Zhou, Yueyao">
+                                                <div class="ms-Persona ms-Persona--size72 root-430">
+                                                    <div role="presentation"
+                                                        class="ms-Persona-coin ms-Persona--size72 coin-437">
+                                                        <div role="presentation" class="ms-Persona-imageArea imageArea">
+                                                            <div class="ms-Persona-initials initials" aria-hidden="true"
+                                                                style="background-color: black">
+                                                                <span>YY</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="presentation" class="details">
+                                                <h1 data-log-name="DisplayName" class="primaryText" title="Xu, Owen">
+                                                    Zhou, Yueyao
+                                                </h1>
+                                                <div class="subtitle" data-log-name="JobTitle" title="Project Manager">
+                                                    Project Manager
+                                                </div>
+                                                <div class="subtitle" data-log-name="Department" title="PMO">
+                                                    Vendor NY
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <div>By</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="float:left;">
+                        <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                            <img src="https://www.sap.com/content/dam/application/shared/icons/default-avatar.png"
+                                style="border-radius:50%;height:50px;width:50px;" />
+                        </div>
+                        <div class="divEmployeeName">Xu, Owen</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Date</div>
+                </th>
+            </tr>
+            <tr>
+                <td>2024-01-17 11:00 ~ 2024-01-17 12:00 / Wednesday, Jan 17, 2024 11:00 AM - 12:00 PM</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Location</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Microsoft Teams</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Project</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Internal Portal</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Phase</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Phase 3 Design, Build, Test</td>
+            </tr>
+            <tr>
+                <th>
+                    <div>Stage</div>
+                </th>
+            </tr>
+            <tr>
+                <td>Design, Build</td>
+            </tr>
+            <tr>
+                <th>Documents</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <div style="float:left;height:33px;width:33px;"><img
+                                src="https://spoprod-a.akamaihd.net/files/fabric/assets/item-types/32/xlsx.svg"></div>
+                        <div style="float:left;">
+                            <div style="height:11px;"></div>
+                            <div style="height:11px;">Internal Portal Project Plan.xlsx</div>
+                            <div style="height:11px;"></div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>What project team reaching an agreement during this meeting</th>
+            </tr>
+            <tr>
+                <td>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                    <div>
+                        <div>
+                            <div>
+                                <div style="float:left;">
+                                    <img height="30px" width="30px"
+                                        src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" />
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;">
+                                <div><b>Project Progress & Status Update</b></div>
+                            </div>
+                            <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            Azure AD Account Sync Up Integation (Infrastructure & Security - Azure AD)
+                                            <div>
+                                                <div style="padding-top: 10px;">Ma, Garfield ask Global Deputy CISO
+                                                    Leach, Sherri for advice and approval.</div>
+                                                <div>
+                                                    <div style="float: left; padding-top: 5px;">
+                                                        <div class="divStatus"
+                                                            style="background-color: #fdab3d; float: left;">See Action 1
+                                                        </div>
+                                                    </div>
+                                                    <div style="clear:both;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            Project Execution
+                                            <div>
+                                                <div style="color: red;padding-top: 10px;"><b>Project schedule is delay
+                                                        due to resource issue.</b></div>
+                                                <div style="padding-top: 10px;">1. Contract has not been signed due to
+                                                    AFE approval which lead to resource cannot be book to project.</div>
+                                                <div style="padding-top: 10px;">2. Backend development engineer and IOT
+                                                    development engineer are on several projects concurrently.</div>
+                                                <div>
+                                                    <div style="float: left; padding-top: 5px;">
+                                                        <div class="divStatus"
+                                                            style="background-color: #fdab3d; float: left;">See Action 2
+                                                        </div>
+                                                    </div>
+                                                    <div style="clear:both;"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </li>
+                        </ul>
+                    </div>
+                    <hr style="border:none;border-bottom:1px dashed black;height:1px;" />
+                </td>
+            </tr>
+            <tr>
+                <th>2 weeks Plan</th>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                JAN
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                15
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                16
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                17
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                18
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                19
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                20
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                21
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                22
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                23
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                24
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                25
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                26
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                27
+                            </td>
+                            <td
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:60px;">
+                                28
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">WeChat MiniApp Application</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 0px; text-align: center;width: 548px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Cloud Resource Confirmation</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 0px; text-align: center;width: 731px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">UI Design (1st version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 0px; text-align: center;width: 121px;background-color: blue;">
+                                    Completed</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">IR Confirm UI Design (1st
+                                version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 60px; text-align: center;width: 60px;background-color: blue;">
+                                    Completed</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">UI Design (2nd version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 60px; text-align: center;width: 182px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">IR Confirm UI Design (2nd
+                                version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 180px; text-align: center;width: 60px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">UI Design (final version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 240px; text-align: center;width: 60px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">IR Confirm UI Design (final
+                                version)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 240px; text-align: center;width: 60px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">UI Development (V1)</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 420px; text-align: center;width: 304px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Customer Module UI</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 420px; text-align: center;width: 121px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Asset Module UI</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 540px; text-align: center;width: 121px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Workstation Module UI</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 660px; text-align: center;width: 60px;background-color: gray;">
+                                    Future</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">IOT Interface Specification</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 0px; text-align: center;width: 548px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">IOT Interface Documents</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 420px; text-align: center;width: 304px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Backend Interface Specification
+                            </td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 0px; text-align: center;width: 548px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Backend Interface Documents</td>
+                            <td colspan="14"
+                                style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">
+                                <div
+                                    style="-moz-border-radius: 25px;border-radius: 25px;color: white; margin-left: 420px; text-align: center;width: 304px;background-color: green;">
+                                    In Progress</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="15"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                No.
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:50px;">
+                                Assgin To
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                Description
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Due Date
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:150px;">
+                                Raised By
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Status
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <img height="30px" width="30px"
+                                    src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-one-fill-128.png" />
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../../persona/Ma, Garfield.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Ma, Garfield</div>
+                                </div>
+                            </td>
+                            <td style="border-left: 1px dashed gray;">
+                                Ma, Garfield to follow up with Leach, Sherri for advice and approval.
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Friday</span>
+                                    <span class="day">19</span>
+                                    <span class="month">Jan</span>
+                                    <span class="year">2024</span>
+                                </time>
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">In
+                                Progress</td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <img height="30px" width="30px"
+                                    src="https://cdn0.iconfinder.com/data/icons/phosphor-fill-vol-3/256/number-circle-two-fill-128.png" />
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <div style="float:left;">
+                                    <div style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                        <img src="../../persona/Xu, Owen.jfif"
+                                            style="border-radius:50%;height:50px;width:50px;" />
+                                    </div>
+                                    <div class="divEmployeeName">Xu, Owen</div>
+                                </div>
+                            </td>
+                            <td style="border-left: 1px dashed gray;">
+                                Xu, Owen to escalate to program board to ask NY to add IOT development resource into
+                                project.
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <time datetime="2023-04-14" class="date-as-calendar position-pixels">
+                                    <span class="weekday">Wednesday</span>
+                                    <span class="day">17</span>
+                                    <span class="month">Jan</span>
+                                    <span class="year">2024</span>
+                                </time>
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Project Team</td>
+                            <td style="border-left: 1px dashed gray;border-right: 1px dashed gray;text-align:center;">In
+                                Progress</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Risks</th>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                No.
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:70px;">
+                                Status
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Function
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Date
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                Category
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                P
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                I
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                P*I
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                Description
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                Mitigation
+                            </td>
+                            <td
+                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:110px;">
+                                Owner
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">1</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Open</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Product</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">2023-12-06</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Solution</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:orange;">4</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:orange;">4</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:red;">16</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Azure AD Account Sync Up
+                                Integration
+                                (Infrastructure - Azure AD) feasibility.
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Use alternative solution.</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <div>
+                                    <img src="../../persona/Ma, Garfield.jfif"
+                                        style="border-radius:50%;height:30px;width:30px;" />
+                                    <div style="height:30px;">Ma, Garfield</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">2
+                            </td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                Closed</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                Procurement</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                2023-12-06</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                Schedule</td>
+                            <td
+                                style="border-left: 1px dashed gray;text-align:center;background-color:orange;text-decoration: line-through;">
+                                4</td>
+                            <td
+                                style="border-left: 1px dashed gray;text-align:center;background-color:orange;text-decoration: line-through;">
+                                4</td>
+                            <td
+                                style="border-left: 1px dashed gray;text-align:center;background-color:red;text-decoration: line-through;">
+                                16</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                Slow moving of SOW and quotation will delay the schedule.</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                Break down plan and push.</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;text-decoration: line-through;">
+                                <div>
+                                    <img src="../../persona/Ding, Liang.jfif"
+                                        style="border-radius:50%;height:30px;width:30px;" />
+                                    <div style="height:30px;">Ding, Liang</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-left: 1px dashed gray;text-align:center;">3</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Open</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Project Management</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">2024-01-10</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Schedule</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:red;">5</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:red;">5</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;background-color:red;">25</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Project schedule is delay due to
+                                resource issue.</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">Escalate to program board for
+                                AFE approval to sign contract and add resource to project.</td>
+                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                <div>
+                                    <img src="../../persona/Xu, Owen.jfif"
+                                        style="border-radius:50%;height:30px;width:30px;" />
+                                    <div style="height:30px;">Xu, Owen</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="11"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Schedule</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-5">Gate / Milestone</h4>
+
+                                        <div class="hori-timeline" dir="ltr">
+                                            <ul class="list-inline events">
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-primary text-primary">NA</div>
+                                                        <h5 class="font-size-16">G 0</h5>
+                                                        <p class="text-muted">NA</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-success text-success">2023-12-06
+                                                        </div>
+                                                        <h5 class="font-size-16">Kick Off</h5>
+                                                        <p class="text-muted">Kick off the project</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-warning text-warning">2024-01-31
+                                                        </div>
+                                                        <h5 class="font-size-16">G 1</h5>
+                                                        <p class="text-muted">Gate Review for Phase 1</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-warning text-warning">2024-01-31
+                                                        </div>
+                                                        <h5 class="font-size-16">G 2</h5>
+                                                        <p class="text-muted">Gate Review for Phase 2</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-warning text-warning">2024-04-24
+                                                        </div>
+                                                        <h5 class="font-size-16">G 3</h5>
+                                                        <p class="text-muted">Gate Review for Phase 3</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-warning text-warning">2024-04-24
+                                                        </div>
+                                                        <h5 class="font-size-16">G 4</h5>
+                                                        <p class="text-muted">Gate Review for Phase 4</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-danger text-danger">2024-02-02
+                                                        </div>
+                                                        <h5 class="font-size-16">V1 Go Live</h5>
+                                                        <p class="text-muted">Release for V1</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-danger text-danger">2024-04-08
+                                                        </div>
+                                                        <h5 class="font-size-16">V2 Go Live</h5>
+                                                        <p class="text-muted">Release for V2</p>
+                                                    </div>
+                                                </li>
+                                                <li class="list-inline-item event-list">
+                                                    <div class="px-4">
+                                                        <div class="event-date bg-soft-warning text-warning">2024-07-03
+                                                        </div>
+                                                        <h5 class="font-size-16">G 5</h5>
+                                                        <p class="text-muted">Gate Review for Phase 5</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end card -->
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Timeline</th>
+            </tr>
+            <tr>
+                <td>
+                    <div style="margin:0 auto;width:800px;">
+                        <div class="Timeline">
+                            <svg height="5" width="200">
+                                <line x1="0" y1="0" x2="200" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event1">
+                                <div class="event1Bubble">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">06</div>
+                                        <div class="Day">
+                                            Wednesday
+                                            <div class="MonthYear">December 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">kick off</div>
+                                </div>
+                                <div class="eventAuthor">by Project Team</div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="#004165" />
+                                </svg>
+                                <div class="time">00:00 AM</div>
+                            </div>
+                            <svg height="5" width="300">
+                                <line x1="0" y1="0" x2="300" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event2">
+                                <div class="event2Bubble">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">08</div>
+                                        <div class="Day">
+                                            Monday
+                                            <div class="MonthYear">January 2024</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">Phase 3 start</div>
+                                </div>
+                                <div class="event2Author">by Project Team</div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="#004165" />
+                                </svg>
+                                <div class="time2">00:00 PM</div>
+                            </div>
+                            <svg height="5" width="50">
+                                <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="now">
+                                NOW
+                            </div>
+                            <svg height="5" width="150">
+                                <line x1="0" y1="0" x2="150" y2="0"
+                                    style="stroke:rgba(162, 164, 163, 0.37);stroke-width:5" />
+                                Sorry, your browser does not support inline SVG.
+                            </svg>
+                            <div class="event3 futureGray ">
+                                <div class="event1Bubble futureOpacity">
+                                    <div class="eventTime">
+                                        <div class="DayDigit">02</div>
+                                        <div class="Day">
+                                            Friday
+                                            <div class="MonthYear">February 2024</div>
+                                        </div>
+                                    </div>
+                                    <div class="eventTitle">V1 Go Live</div>
+                                </div>
+                                <svg height="20" width="20">
+                                    <circle cx="10" cy="11" r="5" fill="rgba(162, 164, 163, 0.37)" />
+                                </svg>
+                            </div>
+                            <svg height="5" width="50">
+                                <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />
+                            </svg>
+                            <svg height="20" width="42">
+                                <line x1="1" y1="0" x2="1" y2="20" style="stroke:#004165;stroke-width:2" />
+                                <circle cx="11" cy="10" r="3" fill="#004165" />
+                                <circle cx="21" cy="10" r="3" fill="#004165" />
+                                <circle cx="31" cy="10" r="3" fill="#004165" />
+                                <line x1="41" y1="0" x2="41" y2="20" style="stroke:#004165;stroke-width:2" />
+                            </svg>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
