@@ -215,7 +215,7 @@
         "name":"LL",
         "location":"西岸AI PLAZA ZAKUZAKU & FOOM",
         "amount":"37.90",
-        "method":"微信",
+        "method":"",
         "invoice":"LL没拿小票 LL手机大众点评买的",
         "remark":"1个原味泡芙 1个椰子泡芙 一共37.90元"
     },
@@ -237,7 +237,7 @@
         "name":"LL",
         "location":"世纪汇失重餐厅",
         "amount":"353",
-        "method":"微信",
+        "method":"",
         "invoice":"没有小票 LL手机扫码付的 我拍了餐厅iPad的点餐结账单",
         "remark":"一共353元"
     },
