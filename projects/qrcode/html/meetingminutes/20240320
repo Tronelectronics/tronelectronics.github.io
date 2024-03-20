@@ -1,0 +1,1080 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://tronelectronics.github.io/projects/customerportal/css/table.css">
+
+    <style>
+        progress[value] {
+            width: 80px;
+            height: 10px;
+        }
+
+        /* Apply CSS properties to ui-widgets class */
+
+        .ui-widgets {
+            position: relative;
+            display: inline-block;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 9rem;
+            margin: 1.5rem;
+            border: 1.2rem solid palegreen;
+            box-shadow: inset 0 0 7px grey;
+            border-left-color: palegreen;
+            border-top-color: chartreuse;
+            border-right-color: darkgreen;
+            border-bottom-color: white;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        /*  Apply css properties to the second child of ui-widgets class */
+
+        .ui-widgets:nth-child(2) {
+            border-top-color: chartreuse;
+            border-right-color: white;
+            border-left-color: palegreen;
+            border-bottom-color: white;
+        }
+
+        /*  Apply css properties to ui-widgets class and ui-values class*/
+
+        .ui-widgets .ui-values {
+            top: 40px;
+            position: absolute;
+            left: 10px;
+            right: 0;
+            font-weight: 700;
+            font-size: 2.0rem;
+        }
+
+        /*  Apply css properties to ui-widgets class and ui-labels class*/
+
+        .ui-widgets .ui-labels {
+            left: 0;
+            bottom: -16px;
+            text-shadow: 0 0 4px grey;
+            color: black;
+            position: absolute;
+            width: 100%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div style="margin:0 auto;width:1600px;">
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align: left;">Profile</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="margin:0 auto;width:200px;">
+                                    <img src="https://static.vecteezy.com/system/resources/previews/002/005/701/non_2x/scan-qr-code-mobile-phone-scanning-a-qr-code-vector.jpg"
+                                        style="border-radius:5px 5px 5px 5px;height:100px;width:200px;">
+                                </div>
+                                <h3 style="text-align:center;margin:0px 0px;">QR Code</h3>
+                                <div
+                                    style="background-color:gray;border-radius:5px;color:white;margin:0px auto;text-align:center;width:100px;">
+                                    DIGITAL</div>
+                                <div><b>Description</b></div>
+                                <hr>
+                                <p>
+                                    QR code is a Digital Solution. Easy to apply, easy to use, No on-board electronics
+                                    required, smartphone as HMI. Offer basic functionality (documentation, contact,
+                                    parts RFQ). Tease enhanced login functionality, convert users to recurring users.
+                                    Track installation location by geodata from smartphone.
+                                </p>​
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:660px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td colspan="4" style="text-align:left;"><b>QR Code Project Schedule</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;width:200px;">Phase</td>
+                                        <td style="text-align:center;width:150px;">Plan</td>
+                                        <td style="text-align:center;width:150px;">Actual</td>
+                                        <td style="text-align:center;">Status</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phase 1</b> Concept Development</td>
+                                        <td style="text-align:center;">24-03-01 ~ 24-03-15</td>
+                                        <td style="text-align:center;">24-03-01 ~ 24-03-15</td>
+                                        <td style="text-align:center;">
+                                            <div
+                                                style="background-color:green;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                Completed</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phase 2</b> Concept Validation</td>
+                                        <td style="text-align:center;">24-03-18 ~ 24-03-31</td>
+                                        <td style="text-align:center;">24-03-18 ~ Now</td>
+                                        <td style="text-align:center;">
+                                            <div
+                                                style="background-color:blue;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                In Progress</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phase 3</b> Design, Build, Test</td>
+                                        <td style="text-align:center;">24-04-01 ~ 24-05-31</td>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">
+                                            <div
+                                                style="background-color:grey;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                Not Started</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phase 4</b> Launch Preparation</td>
+                                        <td style="text-align:center;">24-06-01 ~ 24-06-30</td>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">
+                                            <div
+                                                style="background-color:grey;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                Not Started</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>Phase 5</b> Launch & Support</td>
+                                        <td style="text-align:center;">24-07-01 ~ 24-07-31</td>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">
+                                            <div
+                                                style="background-color:grey;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                Not Started</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:340px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Project Team</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <img src="https://nam.delve.office.com/mt/v3/people/profileimage?userId=dong_chen%40ap.irco.com&size=L"
+                                                        style="border-radius:50%;height:50px;width:50px;">
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Chen, Dong</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(92, 46, 145);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>DL</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Ding, Liang</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <img src="https://media.licdn.com/dms/image/C5103AQG81UEFCsP7Cw/profile-displayphoto-shrink_400_400/0/1517419112574?e=1716422400&v=beta&t=WL_9r7laoBL4w6fj599QVEyvVAfvjgaDpPHWsV_ewB8"
+                                                        style="border-radius:50%;height:50px;width:50px;">
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Jiang, Josslyn</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(227, 0, 140);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>JL</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Jin, Lian</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <img src="https://nam.delve.office.com/mt/v3/people/profileimage?userId=derrick.lu%40irco.com&size=L"
+                                                        style="border-radius:50%;height:50px;width:50px;">
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Lu, Derrick</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(117, 11, 28);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>LY</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Lu, Yun</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <img src="https://nam.delve.office.com/mt/v3/people/profileimage?userId=lu_luo%40ap.irco.com&size=L"
+                                                        style="border-radius:50%;height:50px;width:50px;">
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Luo, Lu</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <img src="https://nam.delve.office.com/mt/v3/people/profileimage?userId=garfieldma%40irco.com&size=L"
+                                                        style="border-radius:50%;height:50px;width:50px;">
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Ma, Garfield</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(202, 80, 16);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>PH</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Pan, Hao</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(209, 52, 56);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>XO</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Xu, Owen</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:50px;margin:0 auto;width:50px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:48px;position:relative;text-align:center;width:48px;">
+                                                                    <div
+                                                                        style="background-color:rgb(152, 111, 11);border-radius:50%;color:rgb(255, 255, 255);font-size:18px;font-weight:600;height:48px;line-height:48px;">
+                                                                        <span>YP</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="background-color:gray;border-radius:5px;color:white;margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Yang, Peter</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="margin:0 auto;width:1600px;">
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Financial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div style="float:left; width:495px;">
+                                    <div>
+                                        <div style="float:left;padding-left:5px;">
+                                            <img height="40px" width="40px"
+                                                src="https://cdn-icons-png.flaticon.com/512/9472/9472663.png">
+                                        </div>
+                                        <div style="clear:both;"></div>
+                                    </div>
+                                    <div>
+                                        <div style="padding-bottom:10px;padding-left:33px;padding-right:33px;">
+                                            <div>
+                                                <div
+                                                    style="float:left;margin-bottom:25px;margin-left:50px;margin-right:50px;margin-top:25px;">
+                                                    <div>
+                                                        <div style="color:gray;font-size:14px;"><b>CNY TBD</b></div>
+                                                        <div><b>Estimate Project Cost</b></div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="float:left;margin-bottom:25px;margin-left:50px;margin-right:50px;margin-top:25px;">
+                                                    <div>
+                                                        <div style="color:gray;font-size:14px;"><b>CNY TBD</b></div>
+                                                        <div><b>Actual Spend</b></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div
+                                                    style="float:left;margin-bottom:25px;margin-left:50px;margin-right:50px;margin-top:25px;">
+                                                    <div>
+                                                        <div style="color:gray;font-size:14px;"><b>CNY TBD</b></div>
+                                                        <div><b>Cost until Completion</b></div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="float:left;margin-bottom:25px;margin-left:50px;margin-right:50px;margin-top:25px;">
+                                                    <div>
+                                                        <div style="color:gray;font-size:14px;"><b>CNY TBD</b></div>
+                                                        <div><b>Variance</b></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:660px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Owner</td>
+                                        <td style="text-align:center;">Description</td>
+                                        <td style="text-align:center;width:150px;">Start Date ~ Due Date</td>
+                                        <td style="text-align:center;width:100px;">Progress</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:36px;margin:0 auto;width:36px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:36px;position:relative;text-align:center;width:36px;">
+                                                                    <div
+                                                                        style="background-color:rgb(209, 52, 56);border-radius:50%;color:rgb(255, 255, 255);font-size:12px;font-weight:600;height:36px;line-height:36px;">
+                                                                        <span>XO</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Xu, Owen</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Docuemnt System<br>
+                                            <ul>
+                                                <li>Push vender Qiying to solve issue.</li>
+                                                <li>IF decide to biding, THEN Jin, Lian & Lu, Yun to consolidate
+                                                    requirement.</li>
+                                                <li>IF decide to biding, THEN project team to consolidate Vendor
+                                                    Selection Score Card.</li>
+                                                <li>IF decide to biding, THEN vendor to provide SaaS total solution.
+                                                </li>
+                                                <li>Put "Process of Document System" in the plan for discuss and confirm
+                                                    later.</li>
+                                            </ul>
+                                        </td>
+                                        <td style="text-align:center;">Mar 13<sup>th</sup> ~ Mar 29<sup>th</sup></td>
+                                        <td>
+                                            <!-- <div class="ui-widgets">
+                                        <div class="ui-values">85%</div>
+                                        <div class="ui-labels">Java</div>
+                                    </div> -->
+                                            <div style="margin:0 auto;width:80px;">
+                                                <small>20%</small>
+                                                <progress value="20" max="100"></progress>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:36px;margin:0 auto;width:36px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:36px;position:relative;text-align:center;width:36px;">
+                                                                    <div
+                                                                        style="background-color:rgb(209, 52, 56);border-radius:50%;color:rgb(255, 255, 255);font-size:12px;font-weight:600;height:36px;line-height:36px;">
+                                                                        <span>XO</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Xu, Owen</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            QR Code Label Type<br>
+                                            <ul>
+                                                <li>Vendor to provide unit price and sample.</li>
+                                                <li>Project team evaluate and make decision.</li>
+                                            </ul>
+                                        </td>
+                                        <td style="text-align:center;">Mar 13<sup>th</sup> ~ Mar 29<sup>th</sup></td>
+                                        <td>
+                                            <!-- <div class="ui-widgets">
+                                        <div class="ui-values">85%</div>
+                                        <div class="ui-labels">Java</div>
+                                    </div> -->
+                                            <div style="margin:0 auto;width:80px;">
+                                                <small>20%</small>
+                                                <progress value="20" max="100"></progress>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div
+                                                    style="border: 1px dashed gray;height:36px;margin:0 auto;width:36px;">
+                                                    <div
+                                                        style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                        <div>
+                                                            <div>
+                                                                <div
+                                                                    style="flex:0 0 auto;height:36px;position:relative;text-align:center;width:36px;">
+                                                                    <div
+                                                                        style="background-color:rgb(209, 52, 56);border-radius:50%;color:rgb(255, 255, 255);font-size:12px;font-weight:600;height:36px;line-height:36px;">
+                                                                        <span>XO</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    style="margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                    Xu, Owen</div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Frontend Wechat MiniApp<br>
+                                            <ul>
+                                                <li>Lu, Derrick & Ma, Garfield go to vendor NY office to discuss
+                                                    requirement on 2024-03-22 Friday.</li>
+                                                <li>Lu, Derrick & Ma, Garfield discussed and confirmed the process with
+                                                    SE & SSE operation team.</li>
+                                            </ul>
+                                        </td>
+                                        <td style="text-align:center;">Mar 13<sup>th</sup> ~ Mar 22<sup>th</sup></td>
+                                        <td>
+                                            <!-- <div class="ui-widgets">
+                                        <div class="ui-values">85%</div>
+                                        <div class="ui-labels">Java</div>
+                                    </div> -->
+                                            <div style="margin:0 auto;width:80px;">
+                                                <small>20%</small>
+                                                <progress value="20" max="100"></progress>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:340px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Health</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;">Overall</td>
+                                        <td style="text-align:center;">Scope</td>
+                                        <td style="text-align:center;">Time</td>
+                                        <td style="text-align:center;">Budget</td>
+                                        <td style="text-align:center;">Risk</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">
+                                            <div id="circle"
+                                                style="background:greenyellow;border-radius:100%;height:15px;width:15px;margin:0 auto;">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <div id="circle"
+                                                style="background:greenyellow;border-radius:100%;height:15px;width:15px;margin:0 auto;">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <div id="circle"
+                                                style="background:greenyellow;border-radius:100%;height:15px;width:15px;margin:0 auto;">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <div id="circle"
+                                                style="background:greenyellow;border-radius:100%;height:15px;width:15px;margin:0 auto;">
+                                            </div>
+                                        </td>
+                                        <td style="text-align:center;">
+                                            <div id="circle"
+                                                style="background:greenyellow;border-radius:100%;height:15px;width:15px;margin:0 auto;">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="margin:0 auto;width:1600px;">
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Phase 1 Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Done?</td>
+                                        <td style="text-align:center;width:100px;">Date</td>
+                                        <td style="text-align:center;">Task​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">✓</td>
+                                        <td style="text-align:center;">01-01 ~ 01-31</td>
+                                        <td style="text-align:center;">Commercial Hypothesis​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">✓</td>
+                                        <td style="text-align:center;">02-01 ~ 02-08</td>
+                                        <td style="text-align:center;">Product Roadmap​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">✓</td>
+                                        <td style="text-align:center;">02-18 ~ 02-29</td>
+                                        <td style="text-align:center;">Scoping​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">✓</td>
+                                        <td style="text-align:center;">02-01 ~ 02-29</td>
+                                        <td style="text-align:center;">Solution Proposal​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;">✓</td>
+                                        <td style="text-align:center;">03-14 ~ 03-14</td>
+                                        <td style="text-align:center;">Legal Assessment​​</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Phase 2 Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Done?</td>
+                                        <td style="text-align:center;width:100px;">Date</td>
+                                        <td style="text-align:center;">Task​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-18 ~ 03-22</td>
+                                        <td style="text-align:center;">Requirements ​(Frontend WeChat MiniApp)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-13 ~ 03-29</td>
+                                        <td style="text-align:center;">Requirements​ (Document System)​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-25 ~ 03-29</td>
+                                        <td style="text-align:center;">Requirements​ (QR Code Label Printing)​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-18 ~ 03-22</td>
+                                        <td style="text-align:center;">PRD​ (Frontend WeChat MiniApp)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-25 ~ 03-29</td>
+                                        <td style="text-align:center;">Project Plan​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-25 ~ 03-29</td>
+                                        <td style="text-align:center;">Commercialization Plan​​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-25 ~ 03-29</td>
+                                        <td style="text-align:center;">Procurement / Souring Plan​</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Phase 3 Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Done?</td>
+                                        <td style="text-align:center;width:100px;">Date</td>
+                                        <td style="text-align:center;">Task​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-01 ~ 04-12</td>
+                                        <td style="text-align:center;">Procurement Execution (RFQ PR PO Contract)
+                                            ​(Frontend WeChat MiniApp)​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-01 ~ 04-19</td>
+                                        <td style="text-align:center;">RProcurement Execution (RFQ Bidding PR PO)​
+                                            (Document System)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-01 ~ 04-19</td>
+                                        <td style="text-align:center;">Procurement Execution (RFQ Bidding PR PO)​ (QR
+                                            Code Label Printing)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">03-18 ~ 03-22</td>
+                                        <td style="text-align:center;">PRD​ (Frontend WeChat MiniApp)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">05-01 ~ 05-31</td>
+                                        <td style="text-align:center;">Data Collection (Documents)​​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-15 ~ 04-19</td>
+                                        <td style="text-align:center;">Solution Design​ (Frontend WeChat MiniApp)​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-22 ~ 04-26</td>
+                                        <td style="text-align:center;">Solution Design​ (Document System)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-22 ~ 04-26</td>
+                                        <td style="text-align:center;">Solution Design​ (QR Code Label Printing)​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-22 ~ 05-10</td>
+                                        <td style="text-align:center;">Build & Configuration​ (Frontend WeChat
+                                            MiniApp)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-29 ~ 05-17</td>
+                                        <td style="text-align:center;">Build & Configuration​ (Document System)​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">04-29 ~ 05-17</td>
+                                        <td style="text-align:center;">Build & Configuration​ (QR Code Label
+                                            Printing)​​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">05-20 ~ 05-24</td>
+                                        <td style="text-align:center;">Integration Test​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">05-27 ~ 05-31</td>
+                                        <td style="text-align:center;">UAT​​​</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="margin:0 auto;width:1600px;">
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Phase 4 Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Done?</td>
+                                        <td style="text-align:center;width:100px;">Date</td>
+                                        <td style="text-align:center;">Task​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">06-03 ~ 06-07</td>
+                                        <td style="text-align:center;">Production Environment Setup​ (Frontend WeChat
+                                            MiniApp)​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">06-03 ~ 06-07</td>
+                                        <td style="text-align:center;">Production Environment Setup (Document System)​​​
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">06-03 ~ 06-07</td>
+                                        <td style="text-align:center;">Production Environment Setup​ (QR Code Label
+                                            Printing)​</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="float:left;margin:10 10 10 10;width:500px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Phase 5 Task</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="text-align:center;width:50px;">Done?</td>
+                                        <td style="text-align:center;width:100px;">Date</td>
+                                        <td style="text-align:center;">Task​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">07-01 ~ 07-31</td>
+                                        <td style="text-align:center;">Hypercare​​​</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;"></td>
+                                        <td style="text-align:center;">07-01 ~ 07-31</td>
+                                        <td style="text-align:center;">Transition to Operation​​​​</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="margin:0 auto;width:1600px;">
+            <div style="margin:0 auto;width:1000px;">
+                <table class="bordered">
+                    <thead>
+                        <tr>
+                            <th style="text-align:left;">Risk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                                No.
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:70px;">
+                                                Status
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                                Function
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                                Date
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:100px;">
+                                                Category
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                                P
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                                I
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:30px;">
+                                                P*I
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                                Description
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;">
+                                                Mitigation
+                                            </td>
+                                            <td
+                                                style="background-color:mediumslateblue;border: 1px dashed gray;color:white;font-weight:bold;padding:0px 0px 0px 0px;text-align:center;width:110px;">
+                                                Owner
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">1</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">Open</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">Project
+                                                Management
+                                            </td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">2024-03-11</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">Quality</td>
+                                            <td
+                                                style="border-left: 1px dashed gray;text-align:center;background-color:red;">
+                                                5</td>
+                                            <td
+                                                style="border-left: 1px dashed gray;text-align:center;background-color:red;">
+                                                5</td>
+                                            <td
+                                                style="border-left: 1px dashed gray;text-align:center;background-color:red;">
+                                                25</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">Exsiting
+                                                Docuemnt System is not stable may cause QR Code build on top of it
+                                                solution failed.</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">Push vendor to
+                                                solve issue and plan to introduce new vendor solution.</td>
+                                            <td style="border-left: 1px dashed gray;text-align:center;">
+                                                <div>
+                                                    <div
+                                                        style="border: 1px dashed gray;height:36px;margin:0 auto;width:36px;">
+                                                        <div
+                                                            style="border-radius:50%;flex-shrink:0;font-size:28px;height:fit-content;width:fit-content;">
+                                                            <div>
+                                                                <div>
+                                                                    <div
+                                                                        style="flex:0 0 auto;height:36px;position:relative;text-align:center;width:36px;">
+                                                                        <div
+                                                                            style="background-color:rgb(209, 52, 56);border-radius:50%;color:rgb(255, 255, 255);font-size:12px;font-weight:600;height:36px;line-height:36px;">
+                                                                            <span>XO</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="margin:5px auto;padding:1px 1px;text-align:center;width:100px;">
+                                                        Xu, Owen</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="11"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
