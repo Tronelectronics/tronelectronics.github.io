@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+</head>
+
+<body>
+    <div id='myDiv' style="height:600px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
+
+<script>
+    const JUNIOR_MANAGERIAL_SKILLS = 2024;
+    const JUNIOR_TECHNICAL_COMPETENCY = 400;
+    const JUNIOR_COMMUNICATION_SKILLS = 3;
+
+    const MIDDLE_MANAGERIAL_SKILLS = 2028;
+    const MIDDLE_TECHNICAL_COMPETENCY = 800;
+    const MIDDLE_COMMUNICATION_SKILLS = 4;
+
+    const SENIOR_MANAGERIAL_SKILLS = 2030;
+    const SENIOR_TECHNICAL_COMPETENCY = 1000;
+    const SENIOR_COMMUNICATION_SKILLS = 6;
+
+
+    var trace1 = {
+        x: [
+            JUNIOR_TECHNICAL_COMPETENCY,
+            MIDDLE_TECHNICAL_COMPETENCY,
+            SENIOR_TECHNICAL_COMPETENCY,
+        ],
+        y: [
+            JUNIOR_COMMUNICATION_SKILLS,
+            MIDDLE_COMMUNICATION_SKILLS,
+            SENIOR_COMMUNICATION_SKILLS
+        ],
+        z: [
+            JUNIOR_MANAGERIAL_SKILLS,
+            MIDDLE_MANAGERIAL_SKILLS,
+            SENIOR_MANAGERIAL_SKILLS,
+        ],
+        mode: 'markers+lines',
+        marker: {
+            size: 12,
+            color: 'rgba(251, 188, 4, 1)',
+            line: {
+                width: 2
+            },
+            opacity: 0.8
+        },
+        text: ['MES', 'Salesforce', 'SAP'],
+        name: 'Junior',
+        type: 'scatter3d'
+    };
+
+    var data = [trace1];
+    var layout = {
+        margin: {
+            l: 0,
+            r: 0,
+            b: 0,
+            t: 0
+        },
+        scene: {
+            xaxis: { title: 'Cost', range: [0, 1000], zerolinewidth: 3 },
+            yaxis: { title: 'Strategy', range: [0, 10], zerolinewidth: 3 },
+            zaxis: { title: 'Time', range: [2020, 2030], zerolinewidth: 3 },
+            annotations: [
+                {
+                    x: JUNIOR_TECHNICAL_COMPETENCY,
+                    y: JUNIOR_COMMUNICATION_SKILLS,
+                    z: JUNIOR_MANAGERIAL_SKILLS,
+                    text: 'MES',
+                    showarrow: false
+                }, {
+                    x: MIDDLE_TECHNICAL_COMPETENCY,
+                    y: MIDDLE_COMMUNICATION_SKILLS,
+                    z: MIDDLE_MANAGERIAL_SKILLS,
+                    text: 'Salesforce',
+                    showarrow: false,
+                }, {
+                    x: SENIOR_TECHNICAL_COMPETENCY,
+                    y: SENIOR_COMMUNICATION_SKILLS,
+                    z: SENIOR_MANAGERIAL_SKILLS,
+                    text: 'SAP',
+                    showarrow: false,
+                },
+            ]
+        },
+    };
+    Plotly.newPlot('myDiv', data, layout);
+</script>
+
+</html>
