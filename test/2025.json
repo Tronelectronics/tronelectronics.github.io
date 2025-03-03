@@ -9,5 +9,27 @@
         "method":"",
         "invoice":"小票拿了",
         "remark":"2杯拿铁 爸爸妈妈没去"
+    },
+    {
+        "no":"2025-02",
+        "date":"2025-03-01 周六",
+        "time":"下午2点半",
+        "name":"李俊",
+        "location":"环球港 Baker&Spice",
+        "amount":"25",
+        "method":"",
+        "invoice":"微信小程序截图保存到百度网盘",
+        "remark":"我1杯红茶 女孩自己微信点的 爸爸妈妈去了"
+    },
+    {
+        "no":"2025-03",
+        "date":"2025-03-02 周日",
+        "time":"中午12点",
+        "name":"Lu Sharon Yingfei",
+        "location":"新世界9楼斯比特花园",
+        "amount":"179",
+        "method":"",
+        "invoice":"大众点评截图保存到百度网盘",
+        "remark":"大众点评买了179元 爸爸妈妈去了"
     }
 ]
