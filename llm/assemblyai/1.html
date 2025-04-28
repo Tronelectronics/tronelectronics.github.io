@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>AssemblyAI Transcription</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="result"></div>
+    <script>
+        const baseUrl = "https://api.assemblyai.com";
+        const headers = {
+            authorization: "3e78cf594e4347fb86761205dd4d82a6",
+        };
+        const FILE_URL = "https://assemblyaiusercontent.com/playground/YqA9b9HEzqJ.mp3";
+
+        async function transcribeAudio() {
+            try {
+                // 第一步：提交转录请求
+                const data = {
+                    audio_url: FILE_URL,
+                    speech_model: "universal",
+                    language_detection: true,
+                };
+
+                const response = await axios.post(`${baseUrl}/v2/transcript`, data, { headers });
+                const transcriptId = response.data.id;
+                
+                // 第二步：轮询检查转录状态
+                const checkStatus = async () => {
+                    const pollingResponse = await axios.get(`${baseUrl}/v2/transcript/${transcriptId}`, { headers });
+                    const transcriptionResult = pollingResponse.data;
+
+                    if (transcriptionResult.status === "completed") {
+                        document.getElementById("result").textContent = transcriptionResult.text;
+                        return;
+                    } else if (transcriptionResult.status === "error") {
+                        throw new Error(`Transcription failed: ${transcriptionResult.error}`);
+                    } else {
+                        // 如果还在处理中，3秒后再次检查
+                        setTimeout(checkStatus, 3000);
+                    }
+                };
+
+                // 开始轮询
+                checkStatus();
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("result").textContent = `Error: ${error.message}`;
+            }
+        }
+
+        // 启动转录过程
+        transcribeAudio();
+    </script>
+</body>
+</html>
