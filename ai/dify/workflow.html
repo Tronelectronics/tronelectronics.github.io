@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dify API Call Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dify Workflow API Call</h1>
+    
+    <div class="input-container">
+        <label for="apiKey">API Key:</label>
+        <input type="password" id="apiKey" placeholder="Enter your Dify API key">
+    </div>
+
+    <div class="input-container">
+        <label for="inputs">Inputs (JSON format):</label>
+        <input type="text" id="inputs" placeholder='{"audio_url": "https://ucarecdn.com/c2174909-2d44-4c7f-9eeb-ff73049f618d/agent_reply_cannot_help.mp3"}'>
+    </div>
+
+    <button onclick="callDifyAPI()">Run Workflow</button>
+
+    <div id="response"></div>
+
+    <script>
+        async function callDifyAPI() {
+            debugger;
+            const apiKey = document.getElementById('apiKey').value;
+            let inputs;
+
+            try {
+                inputs = JSON.parse(document.getElementById('inputs').value);
+            } catch (e) {
+                displayResponse('Error: Invalid JSON in inputs field', true);
+                return;
+            }
+
+            if (!apiKey) {
+                displayResponse('Error: API Key is required', true);
+                return;
+            }
+
+            const responseDiv = document.getElementById('response');
+            responseDiv.innerHTML = 'Loading...';
+
+            try {
+                const response = await axios({
+                    method: 'post',
+                    url: `https://api.dify.ai/v1/workflows/run`,
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    },
+                    data: {
+                        inputs: inputs,
+                        user: "abc-123"
+                    }
+                });
+
+                displayResponse(response.data);
+            } catch (error) {
+                let errorMessage = 'Error occurred while calling the API';
+                if (error.response) {
+                    errorMessage = `Error: ${error.response.status} - ${JSON.stringify(error.response.data)}`;
+                } else if (error.request) {
+                    errorMessage = 'Error: No response received from server';
+                } else {
+                    errorMessage = `Error: ${error.message}`;
+                }
+                displayResponse(errorMessage, true);
+            }
+        }
+
+        function displayResponse(data, isError = false) {
+            const responseDiv = document.getElementById('response');
+            responseDiv.className = isError ? 'error' : '';
+            responseDiv.textContent = typeof data === 'object' ? 
+                JSON.stringify(data, null, 2) : 
+                data;
+        }
+    </script>
+</body>
+</html>
