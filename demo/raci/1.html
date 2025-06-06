@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级RACI责任矩阵</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(120deg, #2c3e50, #3498db);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 25px;
+            padding: 25px;
+        }
+        
+        .panel {
+            background: #f9fbfd;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e1e8f0;
+        }
+        
+        .panel-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e1e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .panel-title i {
+            color: #3498db;
+        }
+        
+        .legend {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .legend-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .legend-color {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .legend-text {
+            font-weight: 500;
+        }
+        
+        .legend-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .matrix-container {
+            overflow: auto;
+            max-height: 600px;
+            border: 1px solid #e1e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        .table-header-rotated {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+        
+        .table-header-rotated th.row-header {
+            font-size: 14px;
+            background-color: #e3f2fd;
+            width: auto;
+            position: sticky;
+            left: 0;
+            z-index: 12;
+            padding: 15px 20px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .table-header-rotated td {
+            width: 70px;
+            border-bottom: 1px solid #e0e6ed;
+            border-top: 1px solid #e0e6ed;
+            border-left: 1px solid #e0e6ed;
+            border-right: 1px solid #e0e6ed;
+            vertical-align: middle;
+            text-align: center;
+            height: 90px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .table-header-rotated th.rotate-45 {
+            height: 160px;
+            width: 70px;
+            min-width: 60px;
+            max-width: 60px;
+            position: relative;
+            vertical-align: bottom;
+            padding: 0;
+            font-size: 13px;
+            line-height: 0.8;
+            position: sticky;
+            top: 0;
+            z-index: 11;
+            background: #e3f2fd;
+        }
+        
+        .table-header-rotated th.rotate-45 > div {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100%;
+            transform: none;
+            overflow: hidden;
+            border-left: 1px solid #e0e6ed;
+            border-right: 1px solid #e0e6ed;
+            border-top: 1px solid #e0e6ed;
+            background: linear-gradient(to bottom, #e3f2fd, #d0e5fc);
+        }
+        
+        .table-header-rotated th.rotate-45 span {
+            transform: rotate(-90deg);
+            position: absolute;
+            bottom: 80px;
+            left: -25px;
+            display: inline-block;
+            width: 100px;
+            text-align: left;
+            white-space: nowrap;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .divRowHeader {
+            padding-left: 10px;
+            text-align: left;
+            width: 200px;
+        }
+        
+        td:first-child,
+        th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+        }
+        
+        .table-header-rotated th.row-header {
+            font-size: 14px;
+            background: linear-gradient(to right, #e3f2fd, #d0e5fc);
+            width: auto;
+            border-left: 1px solid #e0e6ed;
+            border-right: 1px solid #e0e6ed;
+            border-top: 1px solid #e0e6ed;
+        }
+        
+        .cell-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 5px;
+            position: relative;
+        }
+        
+        .people-assigned {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 8px;
+        }
+        
+        .assigned-person {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #e0e7ff;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a4a8c;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .assigned-person:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 单个角标样式 */
+        .raci-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 11px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 2;
+        }
+        
+        .raci-badge:hover {
+            transform: scale(1.15);
+        }
+        
+        /* 双角标容器样式 */
+        .raci-badges {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            display: flex;
+            flex-direction: row-reverse; /* 从右向左排列 */
+            gap: 5px;
+            z-index: 2;
+        }
+        
+        .raci-badges .raci-badge {
+            position: relative;
+            top: 0;
+            right: 0;
+        }
+        
+        /* 角标类型样式（带光环效果） */
+        .badge-R {
+            background: #EF0BD8;
+            box-shadow: 0 0 5px 2px rgba(239, 11, 216, 0.5);
+        }
+        
+        .badge-A {
+            background: #ff0000;
+            box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.5);
+        }
+        
+        .badge-C {
+            background: #5EA226;
+            box-shadow: 0 0 5px 2px rgba(94, 162, 38, 0.5);
+        }
+        
+        .badge-I {
+            background: #777777;
+            box-shadow: 0 0 5px 2px rgba(119, 119, 119, 0.5);
+        }
+        
+        .badge-S {
+            background: #0066cc;
+            box-shadow: 0 0 5px 2px rgba(0, 102, 204, 0.5);
+        }
+        
+        .people-pool {
+            margin-top: 25px;
+            padding: 25px;
+            background: linear-gradient(to bottom, #f0f7ff, #e6f0ff);
+            border-radius: 12px;
+            border: 1px solid #d0e0f0;
+        }
+        
+        .people-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .person {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6a89cc, #4a69bd);
+            border-radius: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: grab;
+            box-shadow: 0 5px 15px rgba(74, 105, 189, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .person:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(74, 105, 189, 0.5);
+        }
+        
+        .person.dragging-person {
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+        
+        .instructions {
+            background: linear-gradient(to right, #e8f4fc, #dcedf9);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 25px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .instructions ul {
+            padding-left: 25px;
+        }
+        
+        .instructions li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .instructions strong {
+            color: #2c3e50;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f0f7ff;
+            border-top: 1px solid #e1e8f0;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        @media (max-width: 1100px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .matrix-container {
+                max-height: 500px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .panel {
+                padding: 15px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .table-header-rotated td {
+                height: 80px;
+                width: 60px;
+            }
+            
+            /* 小屏幕下角标样式调整 */
+            .raci-badges {
+                gap: 3px;
+            }
+            
+            .raci-badge {
+                width: 18px;
+                height: 18px;
+                font-size: 9px;
+            }
+        }
+        
+        .drop-target-cell {
+            background-color: #f0fff0 !important;
+            outline: 2px dashed #4CAF50;
+        }
+        
+        /* 角标选择菜单 */
+        .badge-menu {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            z-index: 100;
+            display: none;
+        }
+        
+        .badge-menu.active {
+            display: block;
+        }
+        
+        .badge-menu-title {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .badge-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+        
+        .badge-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .badge-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .badge-option.selected {
+            outline: 2px solid #333;
+        }
+        
+        .badge-option.none {
+            background: #ccc;
+            color: #666;
+        }
+        
+        .badge-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .badge-action {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: none;
+            transition: background 0.2s;
+        }
+        
+        .badge-action:hover {
+            background: #e0e0e0;
+        }
+        
+        .badge-action.apply {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .badge-action.apply:hover {
+            background: #3d8b40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-project-diagram"></i> RACI 责任分配矩阵</h1>
+            <p class="subtitle">清晰定义项目中每个角色的责任与职责关系</p>
+        </header>
+        
+        <div class="dashboard">
+            <div class="panel">
+                <h2 class="panel-title"><i class="fas fa-info-circle"></i> RACI 图例</h2>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color badge-R">R</div>
+                        <div>
+                            <div class="legend-text">Responsible (执行)</div>
+                            <div class="legend-desc">完成任务的具体执行人</div>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color badge-A">A</div>
+                        <div>
+                            <div class="legend-text">Accountable (负责)</div>
+                            <div class="legend-desc">对任务负最终责任的人</div>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color badge-C">C</div>
+                        <div>
+                            <div class="legend-text">Consulted (咨询)</div>
+                            <div class="legend-desc">提供专业意见的专家</div>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color badge-I">I</div>
+                        <div>
+                            <div class="legend-text">Informed (知悉)</div>
+                            <div class="legend-desc">需要了解任务进展的人</div>
+                        </div>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color badge-S">S</div>
+                        <div>
+                            <div class="legend-text">Support (支持)</div>
+                            <div class="legend-desc">为任务提供支持的人</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="people-pool">
+                    <h2 class="panel-title"><i class="fas fa-users"></i> 团队成员</h2>
+                    <p>拖放成员到矩阵中分配职责</p>
+                    <div class="people-container">
+                        <div class="person" draggable="true">TM</div>
+                        <div class="person" draggable="true">DL</div>
+                        <div class="person" draggable="true">DT</div>
+                        <div class="person" draggable="true">QA</div>
+                        <div class="person" draggable="true">PO</div>
+                        <div class="person" draggable="true">MK</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <h2 class="panel-title"><i class="fas fa-table"></i> RACI 责任矩阵</h2>
+                <div class="matrix-container">
+                    <table class="table-header-rotated">
+                        <thead>
+                            <tr>
+                                <th class="row-header"><div class="divRowHeader">任务 / 角色</div></th>
+                                <th class="rotate-45">
+                                    <div><span>项目经理</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>设计负责人</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>开发团队</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>质量保证</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>产品负责人</span></div>
+                                </th>
+                                <th class="rotate-45">
+                                    <div><span>市场团队</span></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="row-header">项目启动</th>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                TM
+                                                <!-- 单个角标示例 -->
+                                                <div class="raci-badge badge-A">A</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DL
+                                                <!-- 双角标示例 -->
+                                                <div class="raci-badges">
+                                                    <div class="raci-badge badge-C">C</div>
+                                                    <div class="raci-badge badge-I">I</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DT
+                                                <div class="raci-badge badge-I">I</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                PO
+                                                <div class="raci-badge badge-R">R</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                MK
+                                                <div class="raci-badges">
+                                                    <div class="raci-badge badge-I">I</div>
+                                                    <div class="raci-badge badge-S">S</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="row-header">UI/UX 设计</th>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                TM
+                                                <div class="raci-badge badge-I">I</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DL
+                                                <div class="raci-badges">
+                                                    <div class="raci-badge badge-R">R</div>
+                                                    <div class="raci-badge badge-A">A</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DT
+                                                <div class="raci-badge badge-C">C</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                PO
+                                                <div class="raci-badge badge-C">C</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="row-header">前端开发</th>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                TM
+                                                <div class="raci-badge badge-I">I</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DL
+                                                <div class="raci-badge badge-C">C</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned">
+                                            <div class="assigned-person">
+                                                DT
+                                                <div class="raci-badges">
+                                                    <div class="raci-badge badge-R">R</div>
+                                                    <div class="raci-badge badge-A">A</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="cell-content">
+                                        <div class="people-assigned"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-lightbulb"></i> 使用说明</h3>
+            <ul>
+                <li><strong>拖放操作：</strong>将左侧团队成员拖放到矩阵单元格中进行分配。</li>
+                <li><strong>角标设置：</strong>点击单元格中的人员头像，可以设置0-2个角标（R、A、C、I、S）。</li>
+                <li><strong>角标含义：</strong>R-执行，A-负责，C-咨询，I-知悉，S-支持。</li>
+            </ul>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-value">6</div>
+                <div class="stat-label">团队成员</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">3</div>
+                <div class="stat-label">项目任务</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-value">12</div>
+                <div class="stat-label">责任分配</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 角标选择菜单 -->
+    <div class="badge-menu" id="badgeMenu">
+        <div class="badge-menu-title">选择角标 (最多2个)</div>
+        <div class="badge-options">
+            <div class="badge-option badge-R" data-type="R">R</div>
+            <div class="badge-option badge-A" data-type="A">A</div>
+            <div class="badge-option badge-C" data-type="C">C</div>
+            <div class="badge-option badge-I" data-type="I">I</div>
+            <div class="badge-option badge-S" data-type="S">S</div>
+            <div class="badge-option none" data-type="none">无</div>
+        </div>
+        <div class="badge-actions">
+            <button class="badge-action cancel">取消</button>
+            <button class="badge-action apply">应用</button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 拖拽功能实现
+            const persons = document.querySelectorAll('.person');
+            const cells = document.querySelectorAll('.cell-content');
+            
+            persons.forEach(person => {
+                person.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.textContent.trim());
+                    this.classList.add('dragging-person');
+                });
+                
+                person.addEventListener('dragend', function() {
+                    this.classList.remove('dragging-person');
+                });
+            });
+            
+            cells.forEach(cell => {
+                cell.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('drop-target-cell');
+                });
+                
+                cell.addEventListener('dragleave', function() {
+                    this.classList.remove('drop-target-cell');
+                });
+                
+                cell.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('drop-target-cell');
+                    const personText = e.dataTransfer.getData('text/plain');
+                    const peopleAssigned = this.querySelector('.people-assigned');
+                    
+                    // 检查是否已存在该人员
+                    const existingPerson = Array.from(peopleAssigned.querySelectorAll('.assigned-person'))
+                        .find(p => p.textContent.trim().startsWith(personText));
+                    
+                    if (!existingPerson) {
+                        const newPerson = document.createElement('div');
+                        newPerson.className = 'assigned-person';
+                        newPerson.textContent = personText;
+                        peopleAssigned.appendChild(newPerson);
+                        
+                        // 添加点击事件以设置角标
+                        newPerson.addEventListener('click', showBadgeMenu);
+                    }
+                });
+            });
+            
+            // 角标设置功能
+            const badgeMenu = document.getElementById('badgeMenu');
+            const badgeOptions = badgeMenu.querySelectorAll('.badge-option');
+            const applyButton = badgeMenu.querySelector('.badge-action.apply');
+            const cancelButton = badgeMenu.querySelector('.badge-action.cancel');
+            let currentPerson = null;
+            let selectedBadges = [];
+            
+            // 显示角标菜单
+            function showBadgeMenu(e) {
+                e.stopPropagation();
+                currentPerson = this;
+                
+                // 重置选中状态
+                selectedBadges = [];
+                badgeOptions.forEach(option => option.classList.remove('selected'));
+                
+                // 获取当前角标
+                const existingBadges = currentPerson.querySelectorAll('.raci-badge');
+                existingBadges.forEach(badge => {
+                    const badgeType = badge.textContent.trim();
+                    const option = Array.from(badgeOptions).find(opt => opt.dataset.type === badgeType);
+                    if (option) {
+                        option.classList.add('selected');
+                        selectedBadges.push(badgeType);
+                    }
+                });
+                
+                // 定位菜单
+                const rect = currentPerson.getBoundingClientRect();
+                badgeMenu.style.left = `${rect.left}px`;
+                badgeMenu.style.top = `${rect.bottom + 5}px`;
+                badgeMenu.classList.add('active');
+                
+                // 添加点击外部关闭菜单
+                document.addEventListener('click', closeBadgeMenuOnClickOutside);
+            }
+            
+            // 点击外部关闭菜单
+            function closeBadgeMenuOnClickOutside(e) {
+                if (!badgeMenu.contains(e.target) && e.target !== currentPerson) {
+                    badgeMenu.classList.remove('active');
+                    document.removeEventListener('click', closeBadgeMenuOnClickOutside);
+                }
+            }
+            
+            // 选择角标
+            badgeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const badgeType = this.dataset.type;
+                    
+                    if (badgeType === 'none') {
+                        // 清除所有选择
+                        selectedBadges = [];
+                        badgeOptions.forEach(opt => opt.classList.remove('selected'));
+                        return;
+                    }
+                    
+                    if (this.classList.contains('selected')) {
+                        // 取消选择
+                        this.classList.remove('selected');
+                        selectedBadges = selectedBadges.filter(type => type !== badgeType);
+                    } else {
+                        // 添加选择，最多2个
+                        if (selectedBadges.length < 2) {
+                            this.classList.add('selected');
+                            selectedBadges.push(badgeType);
+                        }
+                    }
+                });
+            });
+            
+            // 应用角标
+            applyButton.addEventListener('click', function() {
+                if (currentPerson) {
+                    // 移除现有角标
+                    const existingBadges = currentPerson.querySelector('.raci-badges');
+                    const existingSingleBadge = currentPerson.querySelector('.raci-badge:not(.raci-badges .raci-badge)');
+                    
+                    if (existingBadges) {
+                        existingBadges.remove();
+                    }
+                    
+                    if (existingSingleBadge) {
+                        existingSingleBadge.remove();
+                    }
+                    
+                    // 添加新角标
+                    if (selectedBadges.length === 1) {
+                        // 单个角标
+                        const badge = document.createElement('div');
+                        badge.className = `raci-badge badge-${selectedBadges[0]}`;
+                        badge.textContent = selectedBadges[0];
+                        currentPerson.appendChild(badge);
+                    } else if (selectedBadges.length === 2) {
+                        // 双角标
+                        const badgesContainer = document.createElement('div');
+                        badgesContainer.className = 'raci-badges';
+                        
+                        selectedBadges.forEach(badgeType => {
+                            const badge = document.createElement('div');
+                            badge.className = `raci-badge badge-${badgeType}`;
+                            badge.textContent = badgeType;
+                            badgesContainer.appendChild(badge);
+                        });
+                        
+                        currentPerson.appendChild(badgesContainer);
+                    }
+                }
+                
+                badgeMenu.classList.remove('active');
+                document.removeEventListener('click', closeBadgeMenuOnClickOutside);
+            });
+            
+            // 取消角标设置
+            cancelButton.addEventListener('click', function() {
+                badgeMenu.classList.remove('active');
+                document.removeEventListener('click', closeBadgeMenuOnClickOutside);
+            });
+            
+            // 为现有的assigned-person添加点击事件
+            document.querySelectorAll('.assigned-person').forEach(person => {
+                person.addEventListener('click', showBadgeMenu);
+            });
+        });
+    </script>
+</body>
+</html>
